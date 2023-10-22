@@ -1,0 +1,10 @@
+Al pasar a produccion verificar el seeder de la tabla optiones
+Habilitar el jwt
+si el pedido se hace desde una mesa mandar la notificacion al cliente antes de procesar para que sepa que su pedido será llevao a una mesa
+
+
+Al cambiar la medida del art 01 la segunda presentacion me aparece el listado de ingredientes
+en la receta solo poner articulos intercambiables, productos unitarios no se pueden agregar
+Al crear articulo ingresar una descripcion del articulo
+PARA PEDIDOS SINCUENTA, QUE FUNCIONE
+el articlecontroller la funcion destroy descomentar al checkcommandata cuando ya exista la tabla y modelo cs-commanddata
