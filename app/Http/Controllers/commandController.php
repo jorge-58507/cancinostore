@@ -85,19 +85,6 @@ class commandController extends Controller
             $cs_commanddata->save();
         }
     }
-    // public function save($user_id,$request_id,$time,$consumption,$observation){
-    //     $cs_command =new cs_command;
-    //     $cs_command->command_ai_user_id = $user_id;
-    //     $cs_command->command_ai_request_id = $request_id;
-    //     $cs_command->tx_command_time = '';
-    //     $cs_command->tx_command_consumption = $consumption;
-    //     $cs_command->tx_command_observation =  $observation;
-    //     $cs_command->tx_command_delivered = 0;
-    //     $cs_command->tx_command_status = 1;
-    //     $cs_command->save();
-
-    //     return $command_id = $cs_command->ai_command_id;
-    // }
 
     /**
      * Display the specified resource.

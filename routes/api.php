@@ -13,6 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::post('/APIregister', 'Auth\AuthController@register');
+Route::post('/APIlogin', 'Auth\AuthController@login');
+
+
+// PROTECTED ROUTES
+Route::middleware(['jwt.verify'])->group(function () {
+    Route::get('/APIrequest/pendant','requestController@get_pendant');
 });

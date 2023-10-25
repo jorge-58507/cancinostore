@@ -38,9 +38,25 @@ class requestController extends Controller
         return view('request.index', compact('data'));
     }
 
-    public function get_all()
+    public function get_anuled()
     {
-        //
+        return response()->json(['data' => cs_request::where('tx_request_status',0)->get()],200);
+    }
+    public function get_pendant()
+    {
+        return response()->json(['data' => cs_request::where('tx_request_status',1)->get()],200);
+    }
+    public function get_confirmed()
+    {
+        return response()->json(['data' => cs_request::where('tx_request_status',2)->get()],200);
+    }
+    public function get_ready()
+    {
+        return response()->json(['data' => cs_request::where('tx_request_status',3)->get()],200);
+    }
+    public function get_closed()
+    {
+        return response()->json(['data' => cs_request::where('tx_request_status',4)->get()],200);
     }
 
     /**
