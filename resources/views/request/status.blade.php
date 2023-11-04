@@ -25,12 +25,13 @@
         </div>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item" id="request_pending">Su pedido se ha enviado al restaurante.</li>
-        <li class="list-group-item" id="request_confirmed"></li>
+        <li class="list-group-item" id="request_closed"></li>
         <li class="list-group-item" id="request_ready"></li>
+        <li class="list-group-item" id="request_confirmed"></li>
+        <li class="list-group-item" id="request_pending">Su pedido se ha enviado al restaurante.</li>
       </ul>
   
-      <p class="d-inline-flex gap-1">
+      <p class="d-inline-flex gap-1 pt-2">
         <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
           Ver Pedido
         </a>
@@ -81,6 +82,10 @@
     cls_request.set_status(raw_requestinfo);
 
     document.getElementById('btn_updstatus').addEventListener('click', () => {  cls_request.get_status(document.getElementById('request_slug').value);  });
+
+    setInterval(() => {
+      document.getElementById('btn_updstatus').click();
+    }, 30000);
   </script>
 
 

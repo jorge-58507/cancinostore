@@ -738,7 +738,7 @@ class class_article {  constructor(article_list) {
               <div class="row">
                 <div class="col-lg-12">
                   <label class="form-check-label" for="articleDescription">Descripci&oacute;n del Art&iacute;culo</label>
-                  <textarea id="articleDescription" name="articleDescription" cols="82" rows="2" onkeyup="this.value = cls_general.franz_textarea(event,this.value); cls_general.limitText(this,98,1)">${article.tx_article_description}</textarea>
+                  <textarea id="articleDescription" name="articleDescription" cols="82" rows="2" onkeyup="this.value = cls_general.franz_textarea(event,this.value); cls_general.limitText(this,98,1)">${(cls_general.is_empty_var(article.tx_article_description) === 0) ? '' : article.tx_article_description}</textarea>
                 </div>
               </div>
               <div class="row pb-2">
@@ -804,7 +804,6 @@ class class_article {  constructor(article_list) {
     var discountrate = document.getElementById('articleDiscountrate').value;
     var article_option = document.getElementById('articleOption').value;
     var article_description = document.getElementById('articleDescription').value;
-    // if (cls_general.is_empty_var(description) === 0 || cls_general.is_empty_var(code) === 0 || cls_general.is_empty_var(category) === 0 || cls_general.is_empty_var(taxrate) === 0 || cls_general.is_empty_var(discountrate) === 0) {
     if (cls_general.is_empty_var(description) === 0 || cls_general.is_empty_var(code) === 0 || cls_general.is_empty_var(category) === 0 || cls_general.is_empty_var(taxrate) === 0 || cls_general.is_empty_var(discountrate) === 0) {
       cls_general.shot_toast_bs('Llene todos los campos.', { bg: 'text-bg-warning' });
       return false;
@@ -844,7 +843,7 @@ class class_article {  constructor(article_list) {
           }
         });
     } else {
-      cls_article.run_update(article_id, description, code, category, promotion, option, status, product_selected, taxrate, discountrate);
+      cls_article.run_update(article_id, description, code, category, promotion, option, status, product_selected, taxrate, discountrate, article_description);
     }
   }
 
@@ -1101,33 +1100,36 @@ class class_articleproduct {
 
     document.getElementById('articleproductModal_title').innerHTML = `Agregar Ingrediente`;
     document.getElementById('articleproductModal_content').innerHTML = `
-    <div class="row">
-      <div class="col-sm-12 text-center">
-        <span>Debe agregar el ingrediente. Seleccione la cantidad, el producto y la medida. En caso de que el ingrediente pueda variar sabores agregar todos los productos que puedan conformar el ingrediente.</span>
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <span>Debe agregar el ingrediente. Seleccione la cantidad, el producto y la medida. En caso de que el ingrediente pueda variar sabores agregar todos los productos que puedan conformar el ingrediente.</span>
+        </div>
+        <hr/>
+        <div class="col-sm-4">
+          <label for="recipeDescription" class="form-label">Título</label>
+          <input type="text" class="form-control" id="recipeDescription" onfocus="cls_general.validFranz(this.id, ['word','number'],'.')">
+        </div>
+        <div class="col-sm-2">
+          <label for="recipeQuantity" class="form-label">Cantidad</label>
+          <input type="text" class="form-control" id="recipeQuantity" onfocus="cls_general.validFranz(this.id, ['number'],'.')">
+        </div>
+        <div class="col-sm-4">
+          <label for="recipeProduct" class="form-label">Producto</label>
+          <select name="recipeProduct" id="recipeProduct" class="form-select" onchange="cls_articleproduct.set_recipemeasure(this.value)"><option value='' disabled selected>Seleccione</option>${option_product}</select>
+        </div>
+        <div id="container_recipemeasure" class="col-sm-2">
+        </div>
+        <div class="col-sm-12 text-center pt-1">
+          <button type="button" class="btn btn-primary" onclick="cls_articleproduct.add_ingredient()">Aceptar</button>
+        </div>
       </div>
-      <hr/>
-      <div class="col-sm-4">
-        <label for="recipeQuantity" class="form-label">Cantidad</label>
-        <input type="text" class="form-control" id="recipeQuantity" onfocus="cls_general.validFranz(this.id, ['number'],'.')">
+      <div class="row">
+        <div class="col-sm-12">
+          <span>Productos Seleccionados</span>
+        </div>
+        <div id="container_productselected" class="col-sm-12 list-group">
+        </div>
       </div>
-      <div class="col-sm-4">
-        <label for="recipeProduct" class="form-label">Producto</label>
-        <select name="recipeProduct" id="recipeProduct" class="form-select" onchange="cls_articleproduct.set_recipemeasure(this.value)"><option value='' disabled selected>Seleccione</option>${option_product}</select>
-      </div>
-      <div id="container_recipemeasure" class="col-sm-4">
-      </div>
-      <div class="col-sm-12 text-center pt-1">
-        <button type="button" class="btn btn-primary" onclick="cls_articleproduct.add_ingredient()">Aceptar</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <span>Productos Seleccionados</span>
-      </div>
-      <div id="container_productselected" class="col-sm-12 list-group">
-      </div>
-    </div>
-
     `;
     document.getElementById('articleproductModal_footer').innerHTML = `    
       <div class="col-sm-12 pt-1 text-end">
@@ -1168,7 +1170,6 @@ class class_articleproduct {
     }
     console.log(cls_articleproduct.articleproduct_ingredient);
     var i = cls_articleproduct.articleproduct_ingredient.findIndex((ingredient) => { return ingredient.product_id === product.options[product.selectedIndex].getAttribute('alt')   })
-    console.log(i);
     if (i >= 0) {
       cls_general.shot_toast_bs('Ya este producto fue agregado.'); return false;
     }
@@ -1204,10 +1205,16 @@ class class_articleproduct {
 
 
   add_articleproduct() {
+    var description = (cls_general.is_empty_var(document.getElementById('recipeDescription').value) === 0) ? 'Ingrediente' : document.getElementById('recipeDescription').value;
     if (cls_articleproduct.articleproduct_ingredient.length < 2) {
       cls_general.shot_toast_bs('Debe ingresar algún ingrediente intercambiable', { bg: 'text-bg-warning' }); return false;
     }
+    cls_articleproduct.articleproduct_ingredient.map((ingredient,index) => {
+      cls_articleproduct.articleproduct_ingredient[index]['ingredient_title'] = description;
+    })
+
     cls_articleproduct.articleproduct_selected.push(cls_articleproduct.articleproduct_ingredient);
+    console.log(cls_articleproduct.articleproduct_selected);
     cls_articleproduct.articleproduct_ingredient = [];
     cls_articleproduct.render_articleproduct();
   }
@@ -1237,7 +1244,9 @@ class class_articleproduct {
     document.getElementById('container_recipe').innerHTML = content;
 
     const modal = bootstrap.Modal.getInstance('#articleproductModal');
-    modal.hide();
+    if (modal) {
+      modal.hide();
+    }
   }
   delete_selected(index) {
     cls_articleproduct.articleproduct_selected.splice(index, 1);
@@ -1278,7 +1287,7 @@ class class_articleproduct {
 
       if (check_presentation != articleproduct.articleproduct_ai_presentation_id) {
         tbody_price += `
-          <tr class="text-bg-secondary">  
+          <tr class="table-dark cursor_pointer" onclick="cls_articleproduct.edit('${articleproduct.tx_article_slug}',${articleproduct.articleproduct_ai_presentation_id})">  
             <td colspan="2">${articleproduct.tx_presentation_value} (${date})</td>
           </tr>
         `;
@@ -1305,6 +1314,34 @@ class class_articleproduct {
       </tbody>
     </table>`;
     return content;
+  }
+
+  edit(article_slug, presentation_id) {
+    var url = `/recipe/${presentation_id}/${article_slug}`;
+    var method = 'GET';
+    var body = '';
+    var funcion = function (obj) {
+      if (obj.status === 'success') {
+        cls_articleproduct.articleproduct_selected = [];
+        obj.data.recipe.map((rec) => {
+          var ingredient = JSON.parse(rec.tx_articleproduct_ingredient);
+
+          ingredient.map((ing,index) => { ingredient[index].ingredient_title = rec.tx_articleproduct_value})
+          cls_articleproduct.articleproduct_selected.push(ingredient);
+
+
+        })
+
+        console.log(cls_articleproduct.articleproduct_selected);
+        cls_articleproduct.render_articleproduct();
+        document.getElementById('recipePresentation').value = presentation_id;
+      } else {
+        cls_general.shot_toast_bs(obj.message, { bg: 'text-bg-warning' });
+      }
+    }
+    cls_general.async_laravel_request(url, method, funcion, body);
+
+
   }
 
 }

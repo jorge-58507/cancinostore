@@ -63,7 +63,8 @@ class AuthController extends Controller
                 'message' => 'No Token'
             ],500);
         }
-        return response()->json(compact('token'), 200);
+        $data = ['token' => $token, 'status' => 'success'];
+        return response()->json(compact('data'), 200);
     }
 
     protected function user() {

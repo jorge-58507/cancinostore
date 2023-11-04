@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>@yield('title') - Jade Caf&eacute;</title>
+        <title>@yield('title') Jade Caf&eacute;</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -18,12 +18,12 @@
     </head>
     <body class="">
         <main>
-            <div class="container-xl">
+            <div class="container-xxl">
                 <div class="row">
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top border-bottom border-success">
                         <div class="container-fluid">
                             <a class="navbar-brand" href="#">
-                                <svg width="90px" height="90px" viewBox="0 0 1080 1081" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                                <svg width="40px" height="40px" viewBox="0 0 1080 1081" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
                                 <g transform="matrix(1,0,0,1,0,-1151)">
                                     <g transform="matrix(1,0,0,1,-4520,1151.91)">
                                         <rect id="_0_B_VerdeJade" serif:id="0_B_VerdeJade" x="4520" y="0" width="1080" height="1080" style="fill:none;"/>
@@ -52,28 +52,25 @@
                             </button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="{{ url('/request/new') }}"><strong>PEDIDOS</strong></a>
+                                    </li>
                                 @if (Route::has('login'))
                                     @auth
-                                        <li class="nav-item">
-                                        <a class="nav-link active btn btn-outline-light" aria-current="page" href="{{ url('/request/new') }}">Pedidos</a>
-                                        </li>
                                         @if (auth()->user()->checkRole('admin') === true )
                                             <li class="nav-item">
-                                                <a class="nav-link active btn btn-outline-light" aria-current="page" href="{{ url('/configuration') }}">Configuraci&oacute;n</a>
+                                                <a class="nav-link" aria-current="page" href="{{ url('/configuration') }}"><strong>CONFIGURACI&Oacute;N</strong></a>
                                             </li>
                                         @endif
                                     @else
-                                        <li class="nav-item">
-                                        <a class="nav-link active btn btn-outline-light" href="{{ url('/request/new') }}">Pedidos</a>
-                                        </li>
-                                        <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('login') }}">Ingresar</a>
+                                        <li class="nav-item px-2">
+                                            <a class="btn tmgreen_bg" href="{{ url('login') }}">Ingresar</a>
                                         </li>
 
                                         @if (Route::has('register'))
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('register') }}">Registrarse</a>
-                                        </li>
+                                            <li class="nav-item px-2">
+                                                <a class="btn" href="{{ route('register') }}">Registrarse</a>
+                                            </li>
                                         @endif
                                     @endauth
                                 @endif

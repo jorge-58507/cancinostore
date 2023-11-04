@@ -22,8 +22,9 @@ class articleproductController extends Controller
         }
 
         // Answer
-        $rs = cs_articleproduct::select('cs_presentations.tx_presentation_value','cs_articleproducts.created_at','cs_articleproducts.articleproduct_ai_presentation_id','cs_articleproducts.tx_articleproduct_ingredient')
+        $rs = cs_articleproduct::select('cs_articles.tx_article_slug','cs_presentations.tx_presentation_value','cs_articleproducts.created_at','cs_articleproducts.articleproduct_ai_presentation_id','cs_articleproducts.tx_articleproduct_ingredient')
         ->join('cs_presentations','cs_presentations.ai_presentation_id','=','cs_articleproducts.articleproduct_ai_presentation_id')
+        ->join('cs_articles','cs_articles.ai_article_id','=','cs_articleproducts.articleproduct_ai_article_id')
         ->where('articleproduct_ai_article_id',$rs_article['ai_article_id'])
         ->orderby('articleproduct_ai_presentation_id','DESC')->get();
 
@@ -32,10 +33,15 @@ class articleproductController extends Controller
     }
     public function save($article_id,$presentation_id,$recipe){
         // BORRAR LAS RECETAS QUE COINCIDAN CON ARTICULO-PRESENTACIÓN
+        $description = $recipe[0]['ingredient_title'];
+        foreach ($recipe as $key => $value) {
+            $recipe[$key] = array_splice($value,0,5);
+        }
 
         $user = Auth()->user();
         $cs_articleproduct = new cs_articleproduct;
         $cs_articleproduct->articleproduct_ai_user_id       = $user['id'];
+        $cs_articleproduct->tx_articleproduct_value    = $description;
         $cs_articleproduct->articleproduct_ai_article_id    = $article_id;
         $cs_articleproduct->articleproduct_ai_presentation_id      = $presentation_id;
         $cs_articleproduct->tx_articleproduct_ingredient    = json_encode($recipe);
@@ -60,8 +66,9 @@ class articleproductController extends Controller
 
     public function showByArticle ($article_slug){
         $rs_article = cs_article::where('tx_article_slug',$article_slug)->first();
-        $rs = cs_articleproduct::select('cs_presentations.tx_presentation_value','cs_articleproducts.created_at','cs_articleproducts.articleproduct_ai_presentation_id','cs_articleproducts.tx_articleproduct_ingredient')
+        $rs = cs_articleproduct::select('cs_presentations.tx_presentation_value','cs_articleproducts.created_at','cs_articleproducts.articleproduct_ai_presentation_id','cs_articleproducts.articleproduct_ai_article_id','cs_articleproducts.tx_articleproduct_ingredient','cs_articles.tx_article_slug')
         ->join('cs_presentations','cs_presentations.ai_presentation_id','=','cs_articleproducts.articleproduct_ai_presentation_id')
+        ->join('cs_articles','cs_articles.ai_article_id','cs_articleproducts.articleproduct_ai_article_id')
         ->where('articleproduct_ai_article_id',$rs_article['ai_article_id'])
         ->orderby('articleproduct_ai_presentation_id','DESC')->get();
 
@@ -76,7 +83,7 @@ class articleproductController extends Controller
 
     public function showRecipe ($presentation_id, $article_slug){
         $rs_article = cs_article::where('tx_article_slug',$article_slug)->first();
-        $rs = cs_articleproduct::select('cs_presentations.tx_presentation_value','cs_articleproducts.created_at','cs_articleproducts.articleproduct_ai_presentation_id','cs_articleproducts.tx_articleproduct_ingredient')
+        $rs = cs_articleproduct::select('cs_articleproducts.tx_articleproduct_value','cs_presentations.tx_presentation_value','cs_articleproducts.created_at','cs_articleproducts.articleproduct_ai_presentation_id','cs_articleproducts.tx_articleproduct_ingredient')
         ->join('cs_presentations','cs_presentations.ai_presentation_id','=','cs_articleproducts.articleproduct_ai_presentation_id')
         ->where('articleproduct_ai_article_id',$rs_article['ai_article_id'])
         ->where('articleproduct_ai_presentation_id',$presentation_id)

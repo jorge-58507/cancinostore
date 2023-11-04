@@ -63,6 +63,13 @@
   </div>
 </div> */}
 
+
+// -> addSelect(['tx_price_three' => cs_price:: select(DB:: raw('cs_prices.tx_price_three'))
+//   -> whereColumn('price_ai_article_id', 'cs_articles.ai_article_id')
+//   -> orderby('cs_prices.created_at', 'DESC') -> limit(1)
+// ])
+
+
 class general_funct {
   test(){
     alert('lalalasldkaskldn');
@@ -325,7 +332,6 @@ class general_funct {
     $("#" + selector).validCampoFranz(characters + alt);
   }
 
-
   franz_textarea(e,str){
     const rx = new RegExp('\\d|\\w|[,.:;\\-()áéíóúÁÉÍÓÚ ]');
     if (rx.test(e.key)) {
@@ -426,7 +432,7 @@ class general_funct {
     }
     return answer;
   }
-  val_price(str, decimal, refill, split) {
+  val_price(str, decimal=2, refill=1, split=1) {
     //decimal = cantidad de decimales permitidos
     //refill  = rellenar la cantidad de decimales con ceros
     //split   = hay que cortar el string al limite indicado

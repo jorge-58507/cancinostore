@@ -15,357 +15,6 @@
 // ___________________________
 /*####MOUSTACHED##PILOT####*/
 
-// class class_table {
-//   constructor(raw_table) {
-//     this.table_list = raw_table;
-//   }
-//   render(table_list) {
-//     var content_tab = '';
-//     var ubication_str = '';
-//     var content_tab_container = '';
-//     table_list.map((table, index) => {
-//       if (table.tx_ubication_value != ubication_str) {
-//         content_tab += (index === 0) ? `
-//           <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#${table.tx_ubication_prefix}" type="button" role="tab" aria-controls="nav-home" aria-selected="true">${table.tx_ubication_value}</button>
-//         `: `
-//           <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#${table.tx_ubication_prefix}" type="button" role="tab" aria-controls="nav-home" aria-selected="true">${table.tx_ubication_value}</button>
-//         `;
-//         ubication_str = table.tx_ubication_value;
-//         if (index != 0) {
-//           content_tab_container += `
-//             </div>
-//           </div>
-//           `;
-//         }
-//         content_tab_container += (index === 0) ? `
-//           <div class="tab-pane fade show active" id="${table.tx_ubication_prefix}" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-//             <div class="row">
-//         `: `
-//           <div class="tab-pane fade" id="${table.tx_ubication_prefix}" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-//             <div class="row">
-//         `;
-//       }
-//       if (table.tx_table_type === 2) {
-//         var img_button = (cls_general.is_empty_var(table['tx_table_image']) === 1) ? `<img src="attached/image/table/${table['tx_table_image']}" width="70px"></img>` : `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 58.001 58.001" width="70" height="70" xml:space="preserve">
-//             <path style="fill:#88C057;" d="M29,19.5c-0.552,0-1-0.447-1-1v-8c0-0.553,0.448-1,1-1s1,0.447,1,1v8C30,19.053,29.552,19.5,29,19.5z"></path><path style="fill:#88C057;" d="M29,17.5c-0.256,0-0.512-0.098-0.707-0.293l-2-2c-0.391-0.391-0.391-1.023,0-1.414s1.023-0.391,1.414,0l2,2c0.391,0.391,0.391,1.023,0,1.414C29.512,17.403,29.256,17.5,29,17.5z"></path><path style="fill:#88C057;" d="M29,15.5c-0.256,0-0.512-0.098-0.707-0.293c-0.391-0.391-0.391-1.023,0-1.414l2-2c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414l-2,2C29.512,15.403,29.256,15.5,29,15.5z"></path><path style="fill:#553323;" d="M57,54.5c-0.426,0-0.82-0.273-0.954-0.702l-5-16c-0.165-0.526,0.129-1.088,0.656-1.252c0.525-0.166,1.088,0.128,1.253,0.656l5,16c0.165,0.526-0.129,1.088-0.656,1.252C57.199,54.486,57.099,54.5,57,54.5z"></path><path style="fill:#553323;" d="M47.001,54.5c-0.081,0-0.162-0.01-0.244-0.03c-0.536-0.134-0.861-0.677-0.728-1.212l4-16c0.135-0.536,0.68-0.86,1.213-0.728c0.536,0.134,0.861,0.677,0.728,1.212l-4,16C47.857,54.198,47.449,54.5,47.001,54.5z"></path><path style="fill:#553323;" d="M11,54.5c-0.426,0-0.82-0.273-0.954-0.702l-5-16c-0.165-0.526,0.129-1.088,0.656-1.252c0.525-0.166,1.088,0.128,1.253,0.656l5,16c0.165,0.526-0.129,1.088-0.656,1.252C11.199,54.486,11.099,54.5,11,54.5z"></path><path style="fill:#553323;" d="M1.001,54.5c-0.081,0-0.162-0.01-0.244-0.03c-0.536-0.134-0.861-0.677-0.728-1.212l4-16c0.134-0.536,0.678-0.86,1.213-0.728c0.536,0.134,0.861,0.677,0.728,1.212l-4,16C1.857,54.198,1.449,54.5,1.001,54.5z"></path><path style="fill:#C7CAC7;" d="M18,53.5h22c-4.971,0-9-4.029-9-9v-9h3v-4H24v4h3v9C27,49.471,22.971,53.5,18,53.5z"></path><path style="fill:#553323;" d="M48.043,27.5H9.958c1.152,1.147,2.091,2.504,2.779,4h32.526C45.952,30.004,46.89,28.648,48.043,27.5z"></path><rect x="13" y="24.5" style="fill:#C7CAC7;" width="6" height="3"></rect><path style="fill:#C7CAC7;" d="M21,25.5H11c-0.552,0-1-0.447-1-1s0.448-1,1-1h10c0.552,0,1,0.447,1,1S21.552,25.5,21,25.5z"></path><rect x="39" y="24.5" style="fill:#C7CAC7;" width="6" height="3"></rect><path style="fill:#C7CAC7;" d="M47,25.5H37c-0.552,0-1-0.447-1-1s0.448-1,1-1h10c0.552,0,1,0.447,1,1S47.552,25.5,47,25.5z"></path><path style="fill:#C7CAC7;" d="M26.025,18.5C25.39,20.093,25,20.192,25,22.5c0,4.97,1.791,5,4,5s4-0.03,4-5c0-2.308-0.39-2.407-1.025-4H26.025z"></path><path style="fill:#DD352E;" d="M29,3.5h-3v4c0,1.65,1.35,3,3,3V3.5z"></path><path style="fill:#B02721;" d="M29,4.5h3v3c0,1.65-1.35,3-3,3V4.5z"></path><path style="fill:#BFA380;" d="M14,37.5H4.366C1.955,37.5,0,35.546,0,33.135V23.5h0.274C7.855,23.5,14,29.646,14,37.226V37.5z"></path><path style="fill:#BFA380;" d="M44,37.5h9.634c2.411,0,4.366-1.955,4.366-4.366V23.5h-0.274C50.146,23.5,44,29.646,44,37.226V37.5z"></path><path style="fill:#839594;" d="M44,54.5H14c-0.552,0-1-0.447-1-1s0.448-1,1-1h30c0.552,0,1,0.447,1,1S44.552,54.5,44,54.5z"></path><rect x="24" y="32.5" style="fill:#839594;" width="10" height="3"></rect><path style="fill:#E7ECED;" d="M30,52.5h-3l0.112-2.014c0.033-0.591,0.172-1.167,0.349-1.732C27.818,47.62,28,46.436,28,45.244V35.5h1v9.744c0,1.192,0.182,2.376,0.538,3.511c0.177,0.565,0.316,1.141,0.349,1.732L30,52.5z"></path>
-//           </svg>`;
-//         content_tab_container += `
-//         <div class="col-sm-6 col-lg-3 text-center">
-//           <button class="btn btn-success btn-lg my_20" onclick="cls_request.showByTable('${table.tx_table_slug}','${table.tx_table_type}');" style="width: 120px">
-//             ${img_button}<br/>
-//             <p class="fs-6 mb_0 text-truncate">${table.tx_table_value}</p>
-//           </button>
-//         </div>`;
-//       } else {
-//         var img_button = (cls_general.is_empty_var(table['tx_table_image']) === 1) ? `<img src="attached/image/table/${table['tx_table_image']}" width="70px"></img>` : `<svg height="70" width="70" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000">
-//             <g id="SVGRepo_bgCarrier" stroke-width="0"/>
-//             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-//             <g id="SVGRepo_iconCarrier"> <path style="fill:#025037;" d="M406.261,155.826h-11.13V11.13h11.13V155.826z M261.565,11.13h-11.13v144.696h11.13V11.13z M116.87,11.13h-11.13v144.696h11.13V11.13z"/> <path style="fill:#F7F2CD;" d="M467.478,278.261H333.913l55.652-133.565h22.261L467.478,278.261z M267.13,144.696H244.87 l-55.652,133.565h133.565L267.13,144.696z M122.435,144.696h-22.261L44.522,278.261h133.565L122.435,144.696z"/> <path style="fill:#FFFCE3;" d="M446.609,278.261h-91.826l40.812-122.435h10.203L446.609,278.261z M261.101,155.826h-10.203 l-40.811,122.435h91.826L261.101,155.826z M116.405,155.826h-10.203L65.391,278.261h91.826L116.405,155.826z"/> <path style="fill:#F5D470;" d="M369.212,155.826c-1.231-3.483-1.908-7.227-1.908-11.13c0-18.442,14.949-33.391,33.391-33.391 s33.391,14.949,33.391,33.391c0,3.903-0.677,7.648-1.908,11.13H369.212z M287.484,155.826c1.231-3.483,1.908-7.227,1.908-11.13 c0-18.442-14.949-33.391-33.391-33.391s-33.391,14.949-33.391,33.391c0,3.903,0.677,7.648,1.908,11.13H287.484z M142.788,155.826 c1.231-3.483,1.908-7.227,1.908-11.13c0-18.442-14.949-33.391-33.391-33.391s-33.391,14.949-33.391,33.391 c0,3.903,0.677,7.648,1.908,11.13H142.788z"/> <path style="fill:#D19B3F;" d="M434.087,144.696c0,3.903-0.677,7.648-1.908,11.13h-20.353v-11.13c0-6.147-4.983-11.13-11.13-11.13 c-6.147,0-11.13,4.983-11.13,11.13v11.13h-20.353c-1.231-3.483-1.908-7.227-1.908-11.13c0-18.442,14.949-33.391,33.391-33.391 S434.087,126.254,434.087,144.696z M256,111.304c-18.442,0-33.391,14.949-33.391,33.391c0,3.903,0.677,7.648,1.908,11.13h20.353 v-11.13c0-6.147,4.983-11.13,11.13-11.13s11.13,4.983,11.13,11.13v11.13h20.353c1.231-3.483,1.908-7.227,1.908-11.13 C289.391,126.254,274.442,111.304,256,111.304z M111.304,111.304c-18.442,0-33.391,14.949-33.391,33.391 c0,3.903,0.677,7.648,1.908,11.13h20.353v-11.13c0-6.147,4.983-11.13,11.13-11.13c6.147,0,11.13,4.983,11.13,11.13v11.13h20.353 c1.231-3.483,1.908-7.227,1.908-11.13C144.696,126.254,129.746,111.304,111.304,111.304z"/> <path style="fill:#57544C;" d="M500.87,22.261H11.13C4.983,22.261,0,17.278,0,11.13l0,0C0,4.983,4.983,0,11.13,0H500.87 C507.017,0,512,4.983,512,11.13l0,0C512,17.278,507.017,22.261,500.87,22.261z"/> <path style="fill:#D3C6A8;" d="M434.087,489.739L434.087,489.739c0,12.295-9.966,22.261-22.261,22.261H100.174 c-12.295,0-22.261-9.966-22.261-22.261l0,0c0-12.295,9.966-22.261,22.261-22.261h311.652 C424.121,467.478,434.087,477.444,434.087,489.739z"/> <path style="fill:#CA4653;" d="M478.609,467.478H33.391V267.13h445.217V467.478z"/> <path style="fill:#323030;" d="M500.87,478.609H11.13c-6.147,0-11.13-4.983-11.13-11.13l0,0c0-6.147,4.983-11.13,11.13-11.13H500.87 c6.147,0,11.13,4.983,11.13,11.13l0,0C512,473.626,507.017,478.609,500.87,478.609z M512,267.13L512,267.13 c0-6.147-4.983-11.13-11.13-11.13H11.13C4.983,256,0,260.983,0,267.13l0,0c0,6.147,4.983,11.13,11.13,11.13H500.87 C507.017,278.261,512,273.278,512,267.13z"/> <path style="fill:#C6984F;" d="M125.217,500.87h-22.261l38.957-166.957h22.261L125.217,500.87z M347.826,333.913h-22.261 L286.609,500.87h22.261L347.826,333.913z"/> <path style="fill:#AA8144;" d="M164.174,333.913h22.261l38.957,166.957H203.13L164.174,333.913z M386.783,500.87h22.261 l-38.957-166.957h-22.261L386.783,500.87z"/> <path style="fill:#025037;" d="M208.696,356.174h-89.043c-6.147,0-11.13-4.983-11.13-11.13v-22.261c0-6.147,4.983-11.13,11.13-11.13 h89.043c6.147,0,11.13,4.983,11.13,11.13v22.261C219.826,351.191,214.843,356.174,208.696,356.174z M403.478,345.043v-22.261 c0-6.147-4.983-11.13-11.13-11.13h-89.043c-6.147,0-11.13,4.983-11.13,11.13v22.261c0,6.147,4.983,11.13,11.13,11.13h89.043 C398.495,356.174,403.478,351.191,403.478,345.043z"/> <path style="fill:#D3C6A8;" d="M108.522,322.783L108.522,322.783c0-6.147,4.983-11.13,11.13-11.13h89.043 c6.147,0,11.13,4.983,11.13,11.13l0,0H108.522z M403.478,322.783L403.478,322.783c0-6.147-4.983-11.13-11.13-11.13h-89.043 c-6.147,0-11.13,4.983-11.13,11.13l0,0H403.478z"/> <path style="fill:#92393C;" d="M66.783,256c0,6.147-4.983,11.13-11.13,11.13h-11.13c-6.147,0-11.13-4.983-11.13-11.13v-33.391 h33.391V256z"/> <path style="fill:#DB6D53;" d="M50.087,256L50.087,256c-3.073,0-5.565-2.492-5.565-5.565v-27.826h11.13v27.826 C55.652,253.508,53.16,256,50.087,256z"/> <path style="fill:#C6984F;" d="M178.087,250.435v11.13c0,3.073-2.492,5.565-5.565,5.565h-66.783c-3.073,0-5.565-2.492-5.565-5.565 v-11.13c0-3.073,2.492-5.565,5.565-5.565h66.783C175.595,244.87,178.087,247.362,178.087,250.435z"/> <path style="fill:#AA8144;" d="M178.087,250.435V256h-77.913v-5.565c0-3.073,2.492-5.565,5.565-5.565h66.783 C175.595,244.87,178.087,247.362,178.087,250.435z"/> </g>
-//           </svg>
-//         `;
-//         content_tab_container += `
-//         <div class="col-sm-6 col-lg-3 text-center">
-//           <button class="btn btn-success btn-lg my_20" onclick="cls_request.showByTable('${table.tx_table_slug}','${table.tx_table_type}');" style="width: 120px">
-//             ${img_button}<br/>
-//             <p class="fs-6 mb_0 text-truncate">${table.tx_table_value}</p>
-//           </button>
-//         </div>`;
-//       }
-//     });
-//     content_tab_container += `</div>`;
-//     document.getElementById('nav-tab').innerHTML = content_tab;
-//     document.getElementById('nav-tabContent').innerHTML = content_tab_container;
-//   }
-// }
-// class class_request {
-//   constructor(open_request, closed_request, canceled_request) {
-//     this.open_request = open_request;
-//     this.closed_request = closed_request;
-//     this.canceled_request = canceled_request;
-//   }
-//   index() {
-//     var content = `
-//       <div class="col-lg-7">
-//         <div class="row">
-//           <div class="col-xs-12 v_scrollable bb_1 border_gray" style="height: 100vh;">
-//             <nav>
-//               <div class="nav nav-tabs" id="nav-tab" role="tablist">
-//               </div>
-//             </nav>
-//             <div class="tab-content" id="nav-tabContent">
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-
-//       <div class="col-lg-5">
-//         <div class="row" style="height: 15vh">
-//           <h5>Pedidos</h5>
-//           <div class="col-xs-12 col-md-7 pt-2">
-//             <div class="input-group mb-3">
-//               <input type="text" id="requestFilter" class="form-control" placeholder="Buscar por C&oacute;digo o Cliente" onkeyup="cls_request.filter(this.value)">
-//               <button class="btn btn-outline-secondary" type="button" id="" onclick="cls_request.filter(document.getElementById('requestFilter').value)">
-//                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-//                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-//                 </svg>
-//               </button>
-//             </div>
-//           </div>
-//           <div class="col-md-8 col-lg-3 pt-2">
-//             <select class="form-select" id="requestStatus">
-//               <option value="0" selected>Abierto</option>
-//               <option value="1">Cerrado</option>
-//               <option value="2">Cobrada</option>
-//             </select>
-//           </div>
-//           <div class="col-md-4 col-lg-2 pt-2">
-//             <button class="btn btn-info" type="button" id="btn_reloadrequest" onclick="cls_request.reload()">
-//               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-//                 <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
-//                 <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
-//               </svg>
-//             </button>
-//           </div>
-//         </div>
-//         <div class="row">
-//           <div id="container_requestlist" class="col-xs-12 bx_1 by_1 border_gray radius_5 v_scrollable" style="height: 80vh; padding: 0;">
-
-//           </div>
-//         </div>
-//       </div>
-//     `;
-//     document.getElementById('container_request').innerHTML = content;
-//   }
-//   render(target, raw) {
-//     switch (target) {
-//       case 'open':
-//         var content = cls_request.generate_openrequest(raw);
-//         break;
-//       case 'closed':
-//         var content = cls_request.generate_closedrequest(raw);
-//         break;
-//       case 'cancelled':
-//         var content = cls_request.generate_cancelledrequest(raw);
-//         break;
-//     }
-//     document.getElementById('container_requestlist').innerHTML = content;
-//   }
-//   generate_openrequest(open) {
-//     var content = '<ul class="list-group">';
-//     open.map((request) => {
-//       content += `<li class="list-group-item cursor_pointer" onclick="cls_request.showByRequest('${request.tx_request_slug}')"><h5>${request.tx_request_code} - ${request.tx_client_name}</h5><small>${request.tx_request_title} - ${request.tx_table_value} (${cls_general.time_converter(request.created_at)})</small></li>`;
-//     })
-//     content += '</ul>';
-//     return content;
-//   }
-//   generate_closedrequest(open) {
-//     var content = '<ul class="list-group">';
-//     open.map((request) => {
-//       content += `<li class="list-group-item cursor_pointer"><h5>${request.tx_request_code} - ${request.tx_client_name}</h5><small>${request.tx_request_title} - ${request.tx_table_value} (${cls_general.time_converter(request.created_at)})</small></li>`;
-//     })
-//     content += '</ul>';
-//     return content;
-//   }
-//   generate_cancelledrequest(open) {
-//     var content = '<ul class="list-group">';
-//     open.map((request) => {
-//       content += `<li class="list-group-item cursor_pointer"><h5>${request.tx_request_code} - ${request.tx_client_name}</h5><small>${request.tx_request_title} - ${request.tx_table_value} (${cls_general.time_converter(request.created_at)})</small></li>`;
-//     })
-//     content += '</ul>';
-//     return content;
-//   }
-
-//   showByTable(table_slug, type) {
-//     if (type == 1) {
-//       cls_request.showByBar(table_slug)
-//     } else {
-//       var url = '/request/' + table_slug + '/table'; var method = 'GET';
-//       var body = "";
-//       var funcion = function (obj) {
-//         cls_command.command_procesed = obj.data.command_procesed;
-//         cls_request.render_request(obj.data.request, table_slug);
-//       }
-//       cls_general.async_laravel_request(url, method, funcion, body);
-//     }
-//   }
-//   showByBar(bar_slug) {
-//     var url = '/request/' + bar_slug + '/bar'; var method = 'GET';
-//     var body = "";
-//     var funcion = function (obj) {
-//       var content_request = cls_request.generate_openrequest(obj.data.request);
-//       var content = `
-//           <div class="row">
-//             <div class="col-sm-12 text-center py-2">
-//               <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" onclick="cls_request.render_request(null,'${bar_slug}')">Nuevo Pedido</button>
-//             </div>
-//             <div class="col-sm-12">
-//               ${content_request}
-//             </div>
-//           </div>
-//       `;
-//       var footer = `
-//         <div class="row">
-//           <div class="col-sm-12">
-//             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-//           </div>
-//         </div>
-//       `;
-//       document.getElementById('requestModal_title').innerHTML = '<h5>Pedidos en Barra </h5 > ';
-//       document.getElementById('requestModal_content').innerHTML = content;
-//       document.getElementById('requestModal_footer').innerHTML = footer;
-
-//       const modal = new bootstrap.Modal('#requestModal', {})
-//       modal.show();
-//     }
-//     cls_general.async_laravel_request(url, method, funcion, body);
-//   }
-//   showByRequest(request_slug) {
-//     var url = '/request/' + request_slug; var method = 'GET';
-//     var body = "";
-//     var funcion = function (obj) {
-//       if (obj.data.command_procesed.length === 0) {
-//         cls_general.shot_toast_bs('El pedido ya fue cerrado.', { bg: 'text-bg-warning' }); return false;
-//       }
-//       var table_slug = obj.data.table.tx_table_slug;
-//       cls_command.command_procesed = obj.data.command_procesed;
-//       cls_request.render_request(obj.data.request, table_slug);
-//     }
-//     cls_general.async_laravel_request(url, method, funcion, body);
-//   }
-//   render_request(request_info, table_slug) {
-//     cls_command.index(request_info, table_slug);
-//   }
-//   update_info(request_slug) {
-//     var client = document.getElementById('requestClient').name;
-//     var table = document.getElementById('requestTable').value;
-
-//     var url = '/request/' + request_slug + '/client/table/';
-//     var method = 'PUT';
-//     var body = JSON.stringify({ a: client, b: table });
-//     var funcion = function (obj) {
-//       if (obj.status === 'success') {
-//         cls_general.shot_toast_bs(obj.message, { bg: 'text-bg-success' });
-//       } else {
-//         cls_general.shot_toast_bs(obj.message, { bg: 'text-bg-warning' });
-//       }
-//     }
-//     cls_general.async_laravel_request(url, method, funcion, body);
-//   }
-//   look_for(str, status) {
-//     return new Promise(resolve => {
-//       clearTimeout(this.timer);
-//       this.timer = setTimeout(function () {
-//         switch (status) {
-//           case "0":
-//             var haystack = cls_request.open_request;
-//             break;
-//           case "1":
-//             var haystack = cls_request.closed_request;
-//             break;
-//           case "2":
-//             var haystack = cls_request.canceled_request;
-//             break;
-//         }
-//         var needles = str.split(' ');
-//         var raw_filtered = [];
-//         for (var i in haystack) {
-//           var ocurrencys = 0;
-//           for (const a in needles) {
-//             if (haystack[i]['tx_request_code'].toLowerCase().indexOf(needles[a].toLowerCase()) > -1 || haystack[i]['tx_client_name'].toLowerCase().indexOf(needles[a].toLowerCase()) > -1 || haystack[i]['tx_request_title'].toLowerCase().indexOf(needles[a].toLowerCase()) > -1 || haystack[i]['tx_table_value'].toLowerCase().indexOf(needles[a].toLowerCase()) > -1) { ocurrencys++ }
-//           }
-//           if (ocurrencys === needles.length) {
-//             raw_filtered.push(haystack[i]);
-//           }
-//         }
-//         resolve(raw_filtered)
-//       }, 500)
-//     });
-//   }
-//   async filter(str) {
-//     var status = document.getElementById('requestStatus').value;
-//     var filtered = await cls_request.look_for(str, status);
-//     switch (status) {
-//       case "0":
-//         var content = cls_request.generate_openrequest(filtered)
-//         break;
-//       case "1":
-//         var content = cls_request.generate_closedrequest(filtered)
-//         break;
-//       case "2":
-//         var content = cls_request.generate_cancelledrequest(filtered)
-//         break;
-//     }
-//     document.getElementById('container_requestlist').innerHTML = content;
-//   }
-//   close(btn) {
-//     var request_slug = document.getElementById('btn_commandprocess').name;
-//     if (cls_general.is_empty_var(request_slug) === 0) {
-//       cls_general.shot_toast_bs('No hay elementos para cerrar.', { bg: 'text-bg-warning' }); return false;
-//     }
-//     swal({
-//       title: "¿Desea cerrar este pedido?",
-//       text: "Ya no podrán agregarle comandas.",
-//       icon: "info",
-
-//       buttons: {
-//         si: {
-//           text: "Si, cerrarlo",
-//           className: "btn btn-success btn-lg"
-//         },
-//         no: {
-//           text: "No",
-//           className: "btn btn-warning btn-lg",
-//         },
-//       },
-//       dangerMode: true,
-//     })
-//       .then((ans) => {
-//         switch (ans) {
-//           case 'si':
-//             cls_general.disable_submit(btn);
-//             var url = '/request/' + request_slug + '/close';
-//             var method = 'PUT';
-//             var body = JSON.stringify({ a: 1 });;
-//             var funcion = function (obj) {
-//               if (obj.status === 'success') {
-//                 cls_request.open_request = obj.data.open_request;
-
-//                 cls_request.index(); //MUESTRA LA INTERFAZ PEDIDO
-//                 cls_table.render(cls_table.table_list); //MUESTRA LAS MESAS
-//                 cls_request.render('open', cls_request.open_request); //MUESTRA LOS PEDIDOS ABIERTOS
-
-//                 cls_general.shot_toast_bs(obj.message, { bg: 'text-bg-success' });
-//               } else {
-//                 cls_general.shot_toast_bs(obj.message, { bg: 'text-bg-warning' });
-//               }
-//             }
-//             cls_general.async_laravel_request(url, method, funcion, body);
-//             break;
-//           case 'no':
-
-//             break;
-//         }
-//       });
-
-//   }
-//   reload() {
-//     var url = '/request/reload';
-//     var method = 'GET';
-//     var body = '';
-//     var funcion = function (obj) {
-//       if (obj.status === 'success') {
-//         cls_request.open_request = obj.data.open_request;
-//         cls_request.closed_request = obj.data.closed_request;
-//         cls_request.canceled_request = obj.data.canceled_request;
-//       } else {
-//         cls_general.shot_toast_bs(obj.message, { bg: 'text-bg-warning' });
-//       }
-//     }
-//     cls_general.async_laravel_request(url, method, funcion, body);
-
-//   }
-
-// }
 
 class class_article {
   constructor(article_list) {
@@ -412,6 +61,7 @@ class class_command {
   constructor(table_info) {
     this.command_list = [];
     this.table = table_info;
+    this.currentTab = 0
   }
   index() {
     var raw_category = [];
@@ -447,7 +97,9 @@ class class_command {
 
   generate_articlethumbnail_list(filtered) {
     var content = '<div class="row">';
-    filtered.map((article) => {
+    content += `<h5 class="fw-bold pb-3 hr_category">${filtered[0].tx_category_value}</h5>`
+
+    filtered.map((article,index) => {
       var bg = '';
       var promo_str = '';
       if (article.tx_article_promotion == 1) {
@@ -470,14 +122,18 @@ class class_command {
         </g>
       </svg>`;
       var description = (cls_general.is_empty_var(article.tx_article_description) === 0) ? '' : article.tx_article_description;
+      if (filtered[index - 1] && article.tx_category_value != filtered[index-1]['tx_category_value']) {
+        content += `<hr><h5 class="fw-bold pb-3 hr_category">${article.tx_category_value}</h5>`
+      }
       content += `
         <div class="col-6 col-lg-4" onclick="cls_command.show_article('${article.tx_article_slug}','${article.tx_article_value}')">
           <div class="card mb-3 cursor_pointer ${bg} ">
             <div class="row g-0 h_100">
               <div class="col-9 col-sm-10 col-md-8">
                 <div class="card-body" style="padding: 0 5px 5px 10px;">
-                  <h5 class="card-title text-truncate">${promo_str + ' ' + article.tx_article_value}</h5>
-                  <p class="card-text"><small class="fs_12">${description.slice(0,96)}</small></p>
+                  <h5 class="card-title text-truncate py-1">${promo_str + ' ' + article.tx_article_value}</h5>
+                  <p class="card-text mb-0"><small class="fs_12">${description.slice(0, 96)}</small></p>
+                  <p class="fw-bold">B/ ${cls_general.val_price(article.tx_price_three,2,1,1)}</p>
                 </div>
               </div>
               <div class="col-3 col-sm-2 col-md-4 d-flex align-items-center justify-content-center px-1">
@@ -494,55 +150,28 @@ class class_command {
   }
 
   
-  // filter_article(str) {
-  //   var filtered = cls_article.look_for(str, 40);
-  //   var content = cls_command.generate_article_list(filtered)
-  //   document.getElementById('article_list').innerHTML = content;
-  // }
-  // filter_article_category(category) {
-  //   var filtered = cls_article.look_for_category(category);
-  //   var content = cls_command.generate_article_list(filtered)
-  //   document.getElementById('article_list').innerHTML = content;
-  // }
-  // generate_article_list(filtered) {
-  //   var content = '<ul class="list-group">';
-  //   filtered.map((article) => {
-  //     var bg = '';
-  //     var promo_str = '';
-  //     if (article.tx_article_promotion == 1) {
-  //       bg = 'tmred_bg f_white';
-  //       promo_str = `
-  //       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stars" viewBox="0 0 16 16">
-  //         <path d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828l.645-1.937zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.734 1.734 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.734 1.734 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.734 1.734 0 0 0 3.407 2.31l.387-1.162zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L10.863.1z"/>
-  //       </svg>
-  //       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-  //         <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-  //       </svg>`;
-  //     }
-  //     content += `<li class="list-group-item cursor_pointer fs_20 text-truncate ${bg}" onclick="cls_command.show_article('${article.tx_article_slug}','${article.tx_article_value}')">${article.tx_article_code} - ${promo_str + ' ' + article.tx_article_value}</li>`;
-  //   })
-  //   content += '</ul>';
-  //   return content;
-  // }
   generate_recipe_option(article_product) {
-    console.log(article_product);
-    var content_recipe = (article_product.length > 0) ? '<hr><div class="col-12 text-center"><h5>Ingredientes</h5></div>' : '';
+    var content_recipe = (article_product.length > 0) ? '<div class="col-12 text-center"><h5>Ingredientes</h5></div>' : '';
     article_product.map((ap, i) => {
       var raw_ingredient = JSON.parse(ap.tx_articleproduct_ingredient);
       if (raw_ingredient.length > 1) {
         content_recipe += `
-            <div class="col-md-12 col-lg-6">
-              <label for="ingredient_${i}">${i + 1}.- Ingrediente</label>
-              <select class="form-select" id="ingredient_${i}">`;
-          raw_ingredient.map((ingredient) => {
-            content_recipe += `<option value="${ingredient.quantity},${ingredient.measure_id},${ingredient.product_id}">${ingredient.product_value}</option>`;
-          })
-          content_recipe += `</select></div>`;
+          <div class="col-md-12 col-lg-6">
+            <label for="ingredient_${i}">${i + 1}.- ${ap.tx_articleproduct_value}</label>
+            <select class="form-select" id="ingredient_${i}">`;
+            raw_ingredient.map((ingredient) => {
+              content_recipe += `<option value="${ingredient.quantity},${ingredient.measure_id},${ingredient.product_id}">${ingredient.product_value}</option>`;
+            })
+          content_recipe += `</select></div>
+        `;
       }
     })
     return content_recipe;
   }
+  
   show_article(article_slug, description) {
+    cls_command.currentTab = 0;
+
     var url = '/article/' + article_slug; var method = 'GET';
     var body = "";
     var funcion = function (obj) {
@@ -553,7 +182,6 @@ class class_command {
         content_option += `
           <hr/>
           <h5>Opciones</h5>
-          <div id="articleOption" class="row">
         `;
         for (const a in raw_option) {
           var option = raw_option[a];
@@ -564,7 +192,7 @@ class class_command {
           }
           content_option += `</select></div>`;
         }
-        content_option += `</div>`;
+        // content_option += `</div>`;
       }
       var option_presentation = ``; //OPTION PARA LAS PRESENTACIONES DEL ARTICULO, AL CAMBIAR CAMBIAR LOS PRECIOS
       obj.data.price.map((price) => {
@@ -573,36 +201,87 @@ class class_command {
 
       var tax_rate = obj.data.article.tx_article_taxrate;
 
+      // var content = `
+      //   <div class="row">
+      //     <div class="col-md-12 col-lg-4">
+      //       <label for="articlePresentation">Presentation</label>
+      //       <select class="form-select" id="articlePresentation" onchange="cls_command.modal_set_price(this.options[this.selectedIndex].getAttribute('alt'), this.value, '${article_slug}')">
+      //         ${option_presentation}
+      //       </select>
+      //     </div>
+      //     <div class="col-6 col-lg-4">
+      //       <label for="articleQuantity">Cantidad</label>
+      //       <input type="number" class="form-control" id="articleQuantity" value="1" onfocus="cls_general.validFranz(this.id, ['number'])" >
+      //     </div>
+      //     <div id="container_price" class="col-6 col-lg-4">
+      //     </div>
+      //     <div class="col-sm-12">
+      //       <div id="container_recipe" class="row">
+      //       </div>
+      //     </div>
+      //     <div class="col-md-12 col-lg-4">
+      //       <input type="hidden" class="form-control" id="articleDiscountrate" value="${obj.data.article.tx_article_discountrate}" onfocus="cls_general.validFranz(this.id, ['number'])" required>
+      //       <input type="hidden" class="form-control" id="articleTaxrate" value="${tax_rate}" onfocus="cls_general.validFranz(this.id, ['number'])" required>
+      //     </div>
+      //     ${content_option}
+      //   </div>
+      // `;
       var content = `
-        <div class="row">
-          <div class="col-md-12 col-lg-4">
-            <label for="articlePresentation">Presentation</label>
-            <select class="form-select" id="articlePresentation" onchange="cls_command.modal_set_price(this.options[this.selectedIndex].getAttribute('alt'), this.value, '${article_slug}')">
-              ${option_presentation}
-            </select>
-          </div>
-          <div class="col-6 col-lg-4">
-            <label for="articleQuantity">Cantidad</label>
-            <input type="number" class="form-control" id="articleQuantity" value="1" onfocus="cls_general.validFranz(this.id, ['number'])" >
-          </div>
-          <div id="container_price" class="col-6 col-lg-4">
-          </div>
-          <div class="col-sm-12">
-            <div id="container_recipe" class="row">
+        <form id="create_command" action="">
+          <div class="tab_step h_150 display_none">
+            <div class="row">
+              <div class="col-md-12 col-lg-4">
+                <label for="articlePresentation">Presentation</label>
+                <select class="form-select" id="articlePresentation" onchange="cls_command.modal_set_price(this.options[this.selectedIndex].getAttribute('alt'), this.value, '${article_slug}')">
+                  ${option_presentation}
+                </select>
+              </div>
+              <div class="col-6 col-lg-4">
+                <label for="articleQuantity">Cantidad</label>
+                <input type="number" class="form-control" id="articleQuantity" value="1" onfocus="cls_general.validFranz(this.id, ['number'])" >
+              </div>
+              <div id="container_price" class="col-6 col-lg-4">
+              </div>
+              <div class="col-md-12 col-lg-4">
+                <input type="hidden" class="form-control" id="articleDiscountrate" value="${obj.data.article.tx_article_discountrate}" onfocus="cls_general.validFranz(this.id, ['number'])" required>
+                <input type="hidden" class="form-control" id="articleTaxrate" value="${tax_rate}" onfocus="cls_general.validFranz(this.id, ['number'])" required>
+              </div>
             </div>
           </div>
-          <div class="col-md-12 col-lg-4">
-            <input type="hidden" class="form-control" id="articleDiscountrate" value="${obj.data.article.tx_article_discountrate}" onfocus="cls_general.validFranz(this.id, ['number'])" required>
-            <input type="hidden" class="form-control" id="articleTaxrate" value="${tax_rate}" onfocus="cls_general.validFranz(this.id, ['number'])" required>
+
+          <div class="tab_step h_150 display_none">
+            <div class="row">
+              <div class="col-sm-12">
+                <div id="container_recipe" class="row">
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div id="articleOption" class="row">
+                  ${content_option}
+                </div>
+              </div>
+            </div>
           </div>
-          ${content_option}
-        </div>
+
+          <div class="row">
+            <div class="col-12 text-center pt-4">
+              <span class="step"></span>
+              <span class="step"></span>
+            </div>
+          </div>
+
+        </form>
       `;
+
+
       var footer = `
         <div class="row">
           <div class="col-sm-12">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary" onclick="cls_general.disable_submit(this); cls_command.add_article('${article_slug}','${description}','${obj.data.article.ai_article_id}');">Guardar</button>
+            <button type="button" id="prevBtn" class="btn btn-info" onclick="cls_command.nextPrev(-1)">Volver</button>
+            <button type="button" id="nextBtn" class="btn btn-primary" onclick="cls_command.nextPrev(1)">Siguiente</button>
+
+            <button type="button" id="btn_addArticle" class="btn btn-primary display_none" onclick="cls_general.disable_submit(this); cls_command.add_article('${article_slug}','${description}','${obj.data.article.ai_article_id}');">Guardar</button>
           </div>
         </div>
       `;
@@ -621,8 +300,90 @@ class class_command {
 
       const modal = new bootstrap.Modal('#commandModal', {})
       modal.show();
+
+      cls_command.showTab(cls_command.currentTab); // Display the current tab
     }
     cls_general.async_laravel_request(url, method, funcion, body);
+  }
+
+
+
+
+
+
+  showTab(n) {
+    // This function will display the specified tab of the form ...
+    var x = document.getElementsByClassName("tab_step");
+    x[n].style.display = "block";
+    // ... and fix the Previous/Next buttons:
+    if (n == 0) {
+      document.getElementById("prevBtn").style.display = "none";
+    } else {
+      document.getElementById("prevBtn").style.display = "inline";
+    }
+    if (n == (x.length - 1)) {
+      document.getElementById("nextBtn").innerHTML = "Guardar";
+    } else {
+      document.getElementById("nextBtn").innerHTML = "Siguiente";
+    }
+    // ... and run a function that displays the correct step indicator:
+    cls_command.fixStepIndicator(n)
+  }
+  nextPrev(n) {
+    // This function will figure out which tab to display
+    var x = document.getElementsByClassName("tab_step");
+    // Exit the function if any field in the current tab is invalid:
+    // if (n == 1 && !cls_command.validateForm()) return false;
+    // Hide the current tab:
+    var content_recipe = document.getElementById('container_recipe').innerHTML;
+    var content_option = document.getElementById('articleOption').innerHTML;
+    
+    if (cls_general.is_empty_var(content_recipe) === 0 && cls_general.is_empty_var(content_option) === 0) {
+      document.getElementById('btn_addArticle').click();
+    }
+    x[cls_command.currentTab].style.display = "none";
+
+    // Increase or decrease the current tab by 1:
+    cls_command.currentTab = cls_command.currentTab + n;
+    // if you have reached the end of the form... :
+    if (cls_command.currentTab >= x.length) {
+      //...the form gets submitted:
+      // document.getElementById("create_command").submit();
+      document.getElementById('btn_addArticle').click();
+      return false;
+    }
+    // Otherwise, display the correct tab:
+    cls_command.showTab(cls_command.currentTab);
+  }
+  validateForm() {
+    // This function deals with validation of the form fields
+    var x, y, i, valid = true;
+    x = document.getElementsByClassName("tab_step");
+    y = x[cls_command.currentTab].getElementsByTagName("input");
+    // A loop that checks every input field in the current tab:
+    for (i = 0; i < y.length; i++) {
+      // If a field is empty...
+      if (y[i].value == "") {
+        // add an "invalid" class to the field:
+        y[i].className += " invalid";
+        // and set the current valid status to false:
+        valid = false;
+      }
+    }
+    // If the valid status is true, mark the step as finished and valid:
+    if (valid) {
+      document.getElementsByClassName("step")[cls_command.currentTab].className += " finish";
+    }
+    return valid; // return the valid status
+  }
+  fixStepIndicator(n) {
+    // This function removes the "active" class of all steps...
+    var i, x = document.getElementsByClassName("step");
+    for (i = 0; i < x.length; i++) {
+      x[i].className = x[i].className.replace(" active", "");
+    }
+    //... and adds the "active" class to the current step:
+    x[n].className += " active";
   }
   modal_set_price(str, presentation_id, article_slug) {
     var url = '/recipe/' + presentation_id + '/' + article_slug;
@@ -681,7 +442,6 @@ class class_command {
     });
     const Modal = bootstrap.Modal.getInstance('#commandModal');
     Modal.hide();
-    // cls_general.shot_toast_bs('Su producto se ha agregado al pedido.',{bg: 'text-bg-success'});
     cls_command.check_articleselected();
   }
   check_articleselected() {
@@ -755,57 +515,6 @@ class class_command {
     content += '</ul>';
     return { 'content': content, 'price_sale': price_sale };
   }
-  // generate_articleprocesed(command_procesed) {
-  //   var raw_price = [];
-  //   var content_command_procesed = `<div class="list-group">`;
-  //   command_procesed.map((command) => {
-  //     var raw_command = command.tx_commanddata_option.split(',');
-  //     if (raw_command.length > 1) {
-  //       var option = '<ul>';
-  //       raw_command.map((opt) => { option += `<li>${opt}</li>` });
-  //       option += '</ul>';
-  //     } else {
-  //       var option = '';
-  //     }
-  //     var observation = (cls_general.is_empty_var(command.tx_command_observation) === 1) ? ', <strong>Obs.</strong> ' + command.tx_command_observation : '';
-  //     if (command.tx_commanddata_status === 0) {
-  //       var bg_status = 'text-bg-warning text-body-tertiary';
-  //       var btn = ``;
-  //     } else {
-  //       // [{ PRICE, discount, tax, quantity }]
-  //       raw_price.push({ price: command.tx_commanddata_price, discount: command.tx_commanddata_discountrate, tax: command.tx_commanddata_taxrate, quantity: command.tx_commanddata_quantity });
-  //       var bg_status = '';
-  //       var btn = `
-  //         <button type="button" class="btn btn-secondary" onclick="event.preventDefault(); cls_command.cancel(${command.ai_commanddata_id})">Anular</button>
-  //       `;
-  //     }
-  //     var recipe = JSON.parse(command.tx_commanddata_recipe);
-  //     var content_recipe = '<ul>';
-  //     recipe.map((ingredient) => {
-  //       for (const index in ingredient) {
-  //         content_recipe += `<li><small>${index}</small></li>`;
-  //       }
-  //     })
-  //     content_recipe += `</ul>`;
-
-  //     content_command_procesed += `
-  //       <a href="#" class="list-group-item list-group-item-action ${bg_status}" aria-current="true" onclick="event.preventDefault();">
-  //         <div class="d-flex w-100 justify-content-between">
-  //           <h5 class="mb-1">${command.tx_commanddata_quantity} - ${command.tx_commanddata_description} (${command.tx_presentation_value})</h5>
-  //           <br/>
-  //         </div>
-  //         ${content_recipe}
-  //         <p class="mb-1">${option}</p>
-  //         <small>Consumo: ${command.tx_command_consumption}${observation}</small><br/>
-  //         <div class="text-center">
-  //           ${btn}
-  //         </div>
-  //       </a>
-  //     `;
-  //   })
-  //   content_command_procesed += `</div>`;
-  //   return { 'content': content_command_procesed, 'price': raw_price };
-  // }
   delete_articleselected(index) {
     var command_list = cls_command.command_list;
     command_list.splice(index, 1);
@@ -824,12 +533,13 @@ class class_command {
     }
     var content = `
       <div class="row">
-        <div class="col-sm-12">
-          <label for="commandConsumption">Consumo</label>
-          <select id="commandConsumption" class="form-select">
-            <option value="Local">En el local</option>
-            <option value="Retira">Pasa a Retirar</option>
-          </select>
+        <div class="col-sm-12 text-center d-grid gap-2">
+          <div class="btn-group" role="group">
+            <input type="radio" class="btn-check" name="commandConsumption" id="r_local"    autocomplete="off" value="Local" checked>
+            <label class="btn btn-outline-primary" for="r_local">Consumo Local</label>
+            <input type="radio" class="btn-check" name="commandConsumption" id="r_delivery" autocomplete="off" value="Retira">
+            <label class="btn btn-outline-primary" for="r_delivery">Para llevar</label>
+          </div>
         </div>
       </div>
       <div class="row">
@@ -949,7 +659,7 @@ class class_command {
   }
   process() {
     var command_list = cls_command.command_list;
-    var consumption = document.getElementById('commandConsumption').value;
+    var consumption = document.querySelector('input[name="commandConsumption"]:checked').value;
 
     var consumptionHour = document.getElementById('consumptionHour').value;
     var consumptionMinute = document.getElementById('consumptionMinute').value;
@@ -1010,28 +720,80 @@ class class_request {
   set_status(request_info) {
     switch (request_info.tx_request_status) {
       case 1:
-        document.getElementById('request_pending').innerHTML = 'Su pedido se ha enviado al restaurante.';
-        document.getElementById('request_confirmed').innerHTML = '';
-        document.getElementById('request_ready').innerHTML = '';
+        document.getElementById('request_pending').innerHTML = `
+        <h5><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+        </svg>
+        Su pedido se ha enviado al restaurante.
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+          <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+        </svg></h5>`;
+        document.getElementById('request_pending').classList.add('text-bg-primary');
+
+        document.getElementById('request_confirmed').innerHTML = '<small class="fw-lighter text-secondary">Su pedido ya fue revisado.</small>';
+        document.getElementById('request_ready').innerHTML = '<small class="fw-lighter text-secondary">Su pedido esta listo.</small>';
         document.getElementById('status_progress').style.width = '30%';
         break;
       case 2:
-        document.getElementById('request_pending').innerHTML = 'Su pedido se ha enviado al restaurante.';
-        document.getElementById('request_pending').classList.add('text-bg-primary');
-        document.getElementById('request_confirmed').innerHTML = 'Su pedido se ha confirmado.';
-        document.getElementById('request_ready').innerHTML = '';
+        document.getElementById('request_pending').innerHTML = '<small>Su pedido se ha enviado al restaurante.</small>';
+        document.getElementById('request_pending').classList.remove('text-bg-primary');
+        document.getElementById('request_pending').classList.add('text-bg-secondary');
+
+        document.getElementById('request_confirmed').innerHTML = `
+        <h5><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+        </svg>
+        Su pedido ya fue revisado.
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+          <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+        </svg></h5>`;
+        document.getElementById('request_confirmed').classList.add('text-bg-primary');
+        
+        document.getElementById('request_ready').innerHTML = '<small class="fw-lighter text-secondary">Su pedido esta listo.</small>';
         document.getElementById('status_progress').style.width = '60%';
         break;
       case 3:
-        document.getElementById('request_pending').innerHTML = 'Su pedido se ha enviado al restaurante.';
-        document.getElementById('request_pending').classList.add('text-bg-primary');
-        document.getElementById('request_confirmed').innerHTML = 'Su pedido se ha confirmado.';
-        document.getElementById('request_confirmed').classList.add('text-bg-primary');
-        document.getElementById('request_ready').innerHTML = 'Su pedido esta listo.';
+        document.getElementById('request_pending').innerHTML = '<small>Su pedido se ha enviado al restaurante.</small>';
+        document.getElementById('request_pending').classList.add('text-bg-secondary');
+        document.getElementById('request_pending').classList.remove('text-bg-primary');
+
+        document.getElementById('request_confirmed').innerHTML = '<small>Su pedido se ha confirmado.</small>';
+        document.getElementById('request_confirmed').classList.remove('text-bg-primary');
+        document.getElementById('request_confirmed').classList.add('text-bg-secondary');
+
+        document.getElementById('request_ready').innerHTML = `
+        <h5><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+        </svg>
+        Su pedido esta listo.
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+          <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+        </svg></h5>`;
+        document.getElementById('request_ready').classList.add('text-bg-primary');
         document.getElementById('status_progress').style.width = '100%';
         break;
       case 4:
-        window.location.href = "../request/";
+        document.getElementById('request_pending').innerHTML = '';
+        document.getElementById('request_confirmed').innerHTML = '';
+        document.getElementById('request_ready').innerHTML = '';
+        document.getElementById('request_ready').classList.remove('text-bg-primary');
+        document.getElementById('request_ready').classList.add('text-bg-secondary');
+
+        document.getElementById('request_closed').innerHTML = `
+        <h5><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+        </svg>
+        Este pedido ya esta cerrado.
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+          <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+        </svg></h5>`;
+        document.getElementById('request_closed').classList.add('text-bg-primary');
+        document.getElementById('request_pending').classList.remove('text-bg-secondary');
+        document.getElementById('request_confirmed').classList.remove('text-bg-secondary');
+        document.getElementById('request_ready').classList.remove('text-bg-secondary');
+        setTimeout(() => {
+          window.location.href = "../request/new";
+        }, 5000);
       break;
     }
   }
@@ -1043,21 +805,71 @@ class class_request {
   }
   generate_lastest(raw_lastest){
     var content = '';
+    var check_lastest = [];
     raw_lastest.map((article) => {
-      content += `
-        <div class="col-3 col-lg-2">
-          <div class="card cursor_pointer pt-2" onclick="cls_command.show_article('${article.tx_article_slug}','${article.tx_article_value}')">
-            <div class="col-sm-12 text-center">
-              <img src="../attached/image/article/${article.tx_article_thumbnail}" class="article_last">
-            </div>
-            <div class="card-body">
-              <span class="article_title text-truncate">${article.tx_commanddata_description}</span>
-              <span class="badge rounded-pill text-bg-secondary">B/ ${cls_general.val_price(article.tx_commanddata_price,2,1,1)}</span>
+      if (check_lastest.findIndex((element) => element === article.tx_article_slug) === -1) {
+        if(cls_general.is_empty_var(article.tx_article_thumbnail) === 0) {
+          var thumbnail = `
+            <svg width="80px" height="80px" class="" viewBox="0 0 108 108" id="Layeri" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g class="cls-2">
+                <g id="Line">
+                  <path d="M85.5,2h-63a7,7,0,0,0,0,14h.61q2.3,41.22,4.58,82.44a8,8,0,0,0,8,7.56H72.32a8,8,0,0,0,8-7.56Q82.61,57.22,84.89,16h.61a7,7,0,0,0,0-14ZM76.32,98.22a4,4,0,0,1-4,3.78H35.68a4,4,0,0,1-4-3.78L30.56,78H77.44ZM77.67,74H30.33L28.39,39H79.61ZM85.5,12H48v4H80.89L79.83,35H28.17L27.11,16H36V12H22.5a3,3,0,0,1,0-6h63a3,3,0,0,1,0,6Z"></path><path d="M24.33,38.11A2,2,0,0,1,24,37a2,2,0,0,1,.22-.91Z"></path><path d="M84,37a2,2,0,0,1-.33,1.11l.11-2A2,2,0,0,1,84,37Z"></path><path d="M42.66,64.3c0,.11-.08.21-.12.3-2.8-4.3-1.41-11.1,3.52-16,4.32-4.32,10.06-5.92,14.31-4.37a21.45,21.45,0,0,0-2.16,4.55,12.17,12.17,0,0,1-2.15,4.17,12.17,12.17,0,0,1-4.17,2.15A16.17,16.17,0,0,0,46,58.36,16.17,16.17,0,0,0,42.66,64.3Z"></path><path d="M60.91,63.42c-4.3,4.3-10,5.9-14.26,4.39.25-.58.48-1.17.69-1.74a12.17,12.17,0,0,1,2.15-4.17,12.17,12.17,0,0,1,4.17-2.15,16.17,16.17,0,0,0,5.94-3.3,16.17,16.17,0,0,0,3.3-5.94,19.87,19.87,0,0,1,1.45-3.26C67.26,51.54,65.9,58.44,60.91,63.42Z"></path><rect height="4" rx="2" ry="2" width="4" x="40" y="12"></rect>
+                </g>
+              </g>
+            </svg>
+          `
+        }else{
+          var thumbnail = `<img src="../attached/image/article/${article.tx_article_thumbnail}" class="article_last">`;
+        }
+        content += `
+          <div class="col-3 col-lg-2">
+            <div class="card cursor_pointer pt-2 border-success border-2" onclick="cls_request.add_articlelastest(${article.ai_commanddata_id})">
+              <div class="col-sm-12 text-center">
+                ${thumbnail}
+              </div>
+              <div class="card-body">
+                <p class="article_title text-truncate">${article.tx_commanddata_description}</p>
+                <span class="badge rounded-pill text-bg-secondary">B/ ${cls_general.val_price(article.tx_commanddata_price,2,1,1)}</span>
+              </div>
             </div>
           </div>
-        </div>
-      `;
+        `;
+
+
+        check_lastest.push(article.tx_article_slug)
+      }
+
     })
     return content;
+  }
+
+  add_articlelastest(command_id){
+
+    var url = '/commanddata/'+command_id;
+    var method = 'GET';
+    var body = '';
+    var funcion = function (obj) {
+      if (obj.status === 'success') {
+        cls_command.command_list.push({
+          'article_slug': obj.data.info.tx_article_slug,
+          'article_id': obj.data.info.ai_article_id,
+          'article_description': obj.data.info.tx_commanddata_description,
+          'quantity': obj.data.info.tx_commanddata_quantity,
+          'option': obj.data.info.tx_commanddata_option,
+          'presentation_id': obj.data.info.commanddata_ai_presentation_id,
+          'presentation_value': obj.data.info.tx_presentation_value,
+          'price': obj.data.info.tx_commanddata_price,
+          'tax_rate': obj.data.info.tx_commanddata_taxrate,
+          'discount_rate': obj.data.info.tx_commanddata_discountrate,
+          'recipe': JSON.parse(obj.data.info.tx_commanddata_recipe)
+        });
+
+        cls_command.check_articleselected();
+      } else {
+        cls_general.shot_toast_bs(obj.message, { bg: 'text-bg-warning' });
+      }
+    }
+    cls_general.async_laravel_request(url, method, funcion, body);
+
   }
 }

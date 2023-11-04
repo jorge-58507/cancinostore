@@ -42,12 +42,13 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-12 p-0 text-center">
-      <h4>Pedidos</h4>
+    <div class="col-sm-12 px-2 text-center text-white d-flex align-items-start justify-content-center flex-column slide">
+      <h3 class="fw-bold">Pedidos</h3>
+      <p><span>Horario de atenci&oacute;n 7:00am a 10:00pm</span></p>
     </div>
   </div>
   @if (count($data['lastest']) > 0)
-{{-- MOSTRAR EL LISTADO DE REQUEST PROCESADAS, MOSTRAR LA IMAGEN DE ALGUNA ARTICULO DE ESE PEDIDO, Y AL HACER CLICK ABRIR UN MODAL CON LA INFORMACIO Y UN BOTON QUE AGREGUE EL GRUPO DE ARICULOS --}}
+    {{-- MOSTRAR EL LISTADO DE REQUEST PROCESADAS, MOSTRAR LA IMAGEN DE ALGUNA ARTICULO DE ESE PEDIDO, Y AL HACER CLICK ABRIR UN MODAL CON LA INFORMACIO Y UN BOTON QUE AGREGUE EL GRUPO DE ARICULOS --}}
     <div class="row py-3">
       <div class="col-sm-12">
         <h5>Pedidos Anteriores</h5>

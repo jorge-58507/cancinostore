@@ -143,4 +143,9 @@ class commandController extends Controller
         return $rs_command;
     }
 
-}
+    public function get_commanddata($id)
+    {
+        $rs_articlelastest = cs_request::select('cs_commanddatas.ai_commanddata_id', 'cs_commanddatas.tx_commanddata_quantity', 'cs_commanddatas.tx_commanddata_description', 'cs_commanddatas.tx_commanddata_price', 'cs_commanddatas.tx_commanddata_taxrate', 'cs_commanddatas.tx_commanddata_discountrate', 'cs_commanddatas.tx_commanddata_option', 'cs_commanddatas.tx_commanddata_recipe', 'cs_commanddatas.commanddata_ai_presentation_id','cs_presentations.tx_presentation_value', 'cs_articles.tx_article_thumbnail','cs_articles.tx_article_slug','cs_articles.tx_article_value','cs_articles.ai_article_id','cs_articles.tx_article_description')->join('cs_commanddatas','cs_commanddatas.commanddata_ai_request_id','cs_requests.ai_request_id')->join('cs_presentations','cs_presentations.ai_presentation_id','cs_commanddatas.commanddata_ai_presentation_id')->join('cs_articles','cs_articles.ai_article_id','cs_commanddatas.commanddata_ai_article_id')->where('ai_commanddata_id',$id)->first();
+        
+        return response()->json(['status' => 'success','data' => ['info' => $rs_articlelastest]]);
+    }}

@@ -9,6 +9,7 @@ use App\role_user;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -78,12 +79,13 @@ class RegisterController extends Controller
 
         // ENVIO DEL E-MAIL -------ARREGLAR LA DIRECCION URL
         // the message
-                    // $msg = "Usted esta recibiendo este correo ya que decidió registrarse en la tienda de Jade Café, para verificar la cuenta haga click en el siguiente enlace <a href='direccionurl.com/verified/".$answer['id']."'>Verificar Enlace</a>";
+                    // $msg = "Usted esta recibiendo este correo ya que decidió registrarse en la tienda de Jade Café, para verificar la cuenta haga click en el siguiente enlace <a href='direccionurl.com/verify/".$answer['id']."'>Verificar Cuenta</a>";
         // use wordwrap() if lines are longer than 70 characters
                     // $msg = wordwrap($msg,70);
         // send email
-                    // mail($data['email'],"Verificar Cuenta",$msg);
-                    
+                    // mail($data['email'],"Jade Café, Verificar Cuenta",$msg);
+ 
+        // event(new Registered($user));
         return $answer;
     }
 }

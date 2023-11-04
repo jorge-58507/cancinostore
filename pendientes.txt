@@ -1,8 +1,15 @@
 Al pasar a produccion verificar el seeder de la tabla optiones
-Habilitar el jwt
+el servicio de register si no esta confirmado el correo no permitir el acceso a request
+probar en el telefono
+
 si el pedido se hace desde una mesa mandar la notificacion al cliente antes de procesar para que sepa que su pedido será llevao a una mesa
-
-
+en el request al seleccionar el particulo en lugar que diga ingrediente# tenga un titulo para cada grupo de ingredientes
+El listado genral de articulos colocar franja para separar por categoria
+al realizar pedido primero establecer la medida y el precio y luego los ingredientes, ya que al modificar la medida se reinician los ingredientes
+probar el step by step
+ultimos  pedidos que no se repita el producto
+modificar recetas y luego 
+Habilitar el jwt
 Al cambiar la medida del art 01 la segunda presentacion me aparece el listado de ingredientes
 en la receta solo poner articulos intercambiables, productos unitarios no se pueden agregar
 Al crear articulo ingresar una descripcion del articulo
