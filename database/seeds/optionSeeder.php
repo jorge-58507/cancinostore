@@ -25,32 +25,32 @@ class optionSeeder extends Seeder
 
         $tm = new cs_option;
         $tm->tx_option_title = 'RUC';
-        $tm->tx_option_value = '0000-0000';
+        $tm->tx_option_value = '155732387-2-2023';
         $tm->save();
 
         $tm = new cs_option;
         $tm->tx_option_title = 'DV';
-        $tm->tx_option_value = '00';
+        $tm->tx_option_value = '14';
         $tm->save();
 
         $tm = new cs_option;
         $tm->tx_option_title = 'DIRECCION';
-        $tm->tx_option_value = 'Boulevard Penonomé';
+        $tm->tx_option_value = 'Boulevard Penonomé, Feria, Local #50';
         $tm->save();
 
         $tm = new cs_option;
         $tm->tx_option_title = 'TELEFONO';
-        $tm->tx_option_value = '997-0000';
+        $tm->tx_option_value = '909-7100';
         $tm->save();
 
         $tm = new cs_option;
         $tm->tx_option_title = 'CEL';
-        $tm->tx_option_value = '6000-0000';
+        $tm->tx_option_value = '6890-7358';
         $tm->save();
 
         $tm = new cs_option;
         $tm->tx_option_title = 'EMAIL';
-        $tm->tx_option_value = 'tequilaymezcal@mail.com';
+        $tm->tx_option_value = 'jadecoffeshop@gmail.com';
         $tm->save();
 
         $tm = new cs_option;

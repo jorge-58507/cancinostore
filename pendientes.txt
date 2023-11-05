@@ -1,6 +1,7 @@
 Al pasar a produccion verificar el seeder de la tabla optiones
 el servicio de register si no esta confirmado el correo no permitir el acceso a request
 probar en el telefono
+yHGPw0oNf:7r
 
 si el pedido se hace desde una mesa mandar la notificacion al cliente antes de procesar para que sepa que su pedido será llevao a una mesa
 en el request al seleccionar el particulo en lugar que diga ingrediente# tenga un titulo para cada grupo de ingredientes
