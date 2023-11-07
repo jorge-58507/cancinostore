@@ -6,6 +6,9 @@ yHGPw0oNf:7r <- instancia que no sirve
 s1Neoya,gSEn
 
 
+MFvu!mnZaME9 <-taw
+
+
 si el pedido se hace desde una mesa mandar la notificacion al cliente antes de procesar para que sepa que su pedido será llevao a una mesa
 en el request al seleccionar el particulo en lugar que diga ingrediente# tenga un titulo para cada grupo de ingredientes
 El listado genral de articulos colocar franja para separar por categoria
@@ -19,3 +22,14 @@ en la receta solo poner articulos intercambiables, productos unitarios no se pue
 Al crear articulo ingresar una descripcion del articulo
 PARA PEDIDOS SINCUENTA, QUE FUNCIONE
 el articlecontroller la funcion destroy descomentar al checkcommandata cuando ya exista la tabla y modelo cs-commanddata
+
+
+[Mon Nov 06 15:57:58.287078 2023] [proxy_fcgi:error] [pid 10556:tid
+139967557269248] [client **ip_address**:60570] malformed header from script
+'index.php': Bad header:
+ [Mon Nov 06 15:57:58.287212 2023] [proxy_fcgi:error] [pid 10556:tid
+139967557269248] [client **ip_address**:60570] AH01070: Error parsing script
+headers
+ [Mon Nov 06 15:57:58.287219 2023] [proxy_fcgi:error] [pid 10556:tid
+139967557269248] (22)Invalid argument: [client **ip_address**:60570] AH01075:
+Error dispatching request to :
