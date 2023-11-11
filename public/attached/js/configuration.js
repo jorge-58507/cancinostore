@@ -111,7 +111,7 @@ class class_ubication{
       ubicationModal.hide();
       return false;
     }
-    var url = '/ubication/'; var method = 'POST';
+    var url = '/ubication'; var method = 'POST';
     var body = JSON.stringify({ a: description, b: prefix });
     var funcion = function (obj) {
       if (obj.status != 'failed') {
@@ -781,7 +781,7 @@ class class_article {  constructor(article_list) {
       var content_bottom = `
           <div class="row">
             <div class="col-lg-12 text-center pt-2">
-              <button type="button" class="btn btn-warning" onclick="cls_article.delete(this,${article.tx_article_slug});">Eliminar Art&iacute;culo</button>
+              <button type="button" class="btn btn-warning" onclick="cls_article.delete(this,'${article.tx_article_slug}');">Eliminar Art&iacute;culo</button>
               <button type="button" class="btn btn-secondary" onclick="cls_article.render()">Volver</button>
               <button type="button" class="btn btn-success" name="${article.ai_article_id}" id="btn_articleModal_update" onclick="cls_article.update(this,this.name)">Guardar Artículo</button>
             </div>
@@ -1263,7 +1263,7 @@ class class_articleproduct {
       cls_general.shot_toast_bs('Debe seleccionar la presentaci&oacute;n.', { bg: 'text-bg-warning' }); return false;
     }
 
-    var url = '/articleproduct/';
+    var url = '/articleproduct';
     var method = 'POST';
     var body = JSON.stringify({ a: cls_articleproduct.articleproduct_selected, b: article_slug, c: presentation_id });
     var funcion = function (obj) {
@@ -1405,7 +1405,7 @@ class class_price {
       cls_general.shot_toast_bs('Debe seleccionar la presentaci&oacute;n.', { bg: 'text-bg-warning' }); return false;
     }
 
-    var url = '/price/';
+    var url = '/price';
     var method = 'POST';
     var body = JSON.stringify({ a: pOne, b: pTwo, c: pThree, e: article_slug, f: presentation_id, g: cls_articleproduct.articleproduct_selected });
     var funcion = function (obj) {
@@ -1667,7 +1667,7 @@ class class_product {
       cls_general.shot_toast_bs('Falta informaci&oacute;n', { bg: 'text-bg-secondary' });
       return false;
     }
-    var url = '/product/'; var method = 'POST';
+    var url = '/product'; var method = 'POST';
     var body = JSON.stringify({ a: category, b: value, d: code, i: status, j: alarm, k: discountable, l: measure });
     var funcion = function (obj) {
       if (obj.status != 'failed') {
