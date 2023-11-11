@@ -279,7 +279,7 @@ class class_table {
     cls_general.disable_submit(document.getElementById('btn_submitnewtable'));
     var formData = new FormData($('#form_newtable')[0]);
     $.ajax({
-      url: '/table/',
+      url: '/table',
       type: 'POST',
       beforeSend: function (xhr) {
         xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
@@ -403,7 +403,7 @@ class class_table {
 
     var formData = new FormData($('#form_updatetable')[0]);
     $.ajax({
-      url: '/table_upd/',
+      url: '/table_upd',
       type: 'POST',
       beforeSend: function (xhr) {
         xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
@@ -850,7 +850,7 @@ class class_article {  constructor(article_list) {
   run_update() {
     var formData = new FormData($('#form_updatearticle')[0]);
     $.ajax({
-      url: '/article_upd/',
+      url: '/article_upd',
       type: 'POST',
       beforeSend: function (xhr) {
         xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
@@ -1856,60 +1856,6 @@ class class_product {
     cls_general.async_laravel_request(url, method, funcion, body);
 
   }
-  // count_product(product_slug) {
-  //   var url = '/product/' + product_slug + '/count'; var method = 'GET';
-  //   var body = '';
-  //   var funcion = function (obj) {
-  //     if (obj.status === 'success') {
-  //       var list = '<ul class="list-group list-group-flush">';
-  //       obj.data.count_list.map(x => list += `
-  //         <li class="list-group-item">Antes: ${x.tx_productcount_before} Despues: ${x.tx_productcount_after} (${x.created_at})</li>
-  //       `)
-  //       list += '</ul>';
-  //       var content = `
-  //         <div class="row">
-  //           <div class="col-lg-12">
-  //             <h4>Conteo</h4>
-  //             <div class="input-group mb-3">
-  //               <input type="text" id="productQuantity" class="form-control" placeholder="Ingrese la cantidad" onfocus="cls_general.validFranz(this.id, ['number'])" onkeyup="cls_general.limitText(this, 10, toast = 0)" onkeyup="cls_general.limitText(this, 10, toast = 0)">
-  //               <button class="btn btn-success" type="button" id="btn_addCountProduct" onclick="cls_product.updateQuantity('${product_slug}')">Agregar</button>
-  //             </div>
-  //           </div>
-  //           <div id="container_countlist" class="col-lg-12">
-  //             <h5>Conteos Anteriores</h5>
-  //             ${list}
-  //           </div>
-  //         </div>
-  //       `;
-  //       var content_bottom = `
-  //         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-  //         <button type="button" class="btn btn-info" onclick="cls_product.render_modal()">Volver</button>
-  //       `;
-
-  //       document.getElementById('productModal_title').innerHTML = 'Contar';
-  //       document.getElementById('productModal_content').innerHTML = content;
-  //       document.getElementById('productModal_footer').innerHTML = content_bottom;
-  //     }
-  //     cls_general.shot_toast_bs(obj.message);
-  //   }
-  //   cls_general.async_laravel_request(url, method, funcion, body);
-  // }
-  // updateQuantity(product_slug) {
-  //   var quantity = document.getElementById('productQuantity').value;
-  //   if (cls_general.is_empty_var(quantity) === 0 || isNaN(quantity)) {
-  //     cls_general.shot_toast_bs("Debe ingresar un numero.", { bg: "text-bg-warning" })
-  //   }
-  //   var url = '/product/' + product_slug + '/count'; var method = 'POST';
-  //   var body = JSON.stringify({ a: quantity });
-  //   var funcion = function (obj) {
-  //     if (obj.status === 'success') {
-  //       cls_product.info = obj['data']['product'];
-  //       cls_product.render_modal();
-  //     }
-  //     cls_general.shot_toast_bs(obj.message);
-  //   }
-  //   cls_general.async_laravel_request(url, method, funcion, body);
-  // }
 }
 
 

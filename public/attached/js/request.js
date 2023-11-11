@@ -684,7 +684,7 @@ class class_command {
       return false;
     }
 
-    var url = '/command/'; var method = 'POST';
+    var url = '/command'; var method = 'POST';
     var body = JSON.stringify({ a: command_list, b: cls_command.table, c: consumptionHour + ':' + consumptionMinute + ' ' + consumptionMeridian, d: paymentmethod, e: consumption, f: observation, g: telephone });
     var funcion = function (obj) {
       if (obj.status === 'success') {
