@@ -94,7 +94,6 @@ class class_command {
     var content = cls_command.generate_articlethumbnail_list(filtered)
     document.getElementById('container_articlethumbnail').innerHTML = content;
   }
-
   generate_articlethumbnail_list(filtered) {
     var content = '<div class="row">';
     content += `<h5 class="fw-bold pb-3 hr_category">${filtered[0].tx_category_value}</h5>`
@@ -147,9 +146,7 @@ class class_command {
     })
     content += '</div>';
     return content;
-  }
-
-  
+  }  
   generate_recipe_option(article_product) {
     var content_recipe = (article_product.length > 0) ? '<div class="col-12 text-center"><h5>Ingredientes</h5></div>' : '';
     article_product.map((ap, i) => {
@@ -167,8 +164,7 @@ class class_command {
       }
     })
     return content_recipe;
-  }
-  
+  }  
   show_article(article_slug, description) {
     cls_command.currentTab = 0;
 
@@ -283,9 +279,6 @@ class class_command {
 
 
 
-
-
-
   showTab(n) {
     // This function will display the specified tab of the form ...
     var x = document.getElementsByClassName("tab_step");
@@ -370,16 +363,6 @@ class class_command {
         var raw = str.split(',');
         document.getElementById('span_price').innerHTML = 'B/ '+cls_general.val_price(raw[0]);
         document.getElementById('articlePrice').value = parseFloat(raw[0]);
-
-        // var content = `<label for="articlePrice">Precio</label>
-        // <select class="form-select" id="articlePrice">`;
-        // raw.map((price) => {
-        //   var p = parseFloat(price);
-        //   if (price > 0.1) {
-        //     content += `<option value="${p}">${p.toFixed(2)}</option>`;
-        //   }
-        // })
-        // document.getElementById('container_price').innerHTML = content + '</select>';
         document.getElementById('container_recipe').innerHTML = cls_command.generate_recipe_option(obj.data.recipe);;
 
       } else {

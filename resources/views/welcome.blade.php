@@ -59,7 +59,9 @@
                         @enderror
         
                         <button class="btn btn-outline-light" type="submit" name="action">Entrar</button>
-                        <button class="btn btn-link text-white" type="button" name="action">Contraseña Olvidada</button>
+                        <a class="btn btn-link text-white" href="{{ route('password.request') }}">
+                            {{ __('¿Contraseña Olvidada?') }}
+                        </a>
                     </form>
                 </div>
             </div>

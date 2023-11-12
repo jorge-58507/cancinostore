@@ -299,6 +299,8 @@ nav{
 .mhp_100 { height: 100%; }
 /* ########################     HEIGHT 100% VIEWPORT CLASS     ######################## */
 .height_100 {  height: 100vh;  }
+.vh_80  {  height: 80vh;  }
+.vh_60  {  height: 60vh;  }
 /* ########################     TOGGLE CLASS     ######################## */
 .toggle_on {
   visibility: visible;
