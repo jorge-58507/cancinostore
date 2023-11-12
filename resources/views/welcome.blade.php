@@ -17,7 +17,7 @@
         <link href="{{ asset('attached/css/sc.css') }}" rel="stylesheet" />
         <link href="{{ asset('attached/css/mp.css') }}" rel="stylesheet" />
     </head>
-    <body style="background-image: url('attached/image/boulevard.png'); background-repeat: round;">
+    <body style="background-image: url('attached/image/jade_bg.jpg')">
         <nav class="navbar navbar-expand-lg bg-body-tertiary" style="z-index: 100">
             <div class="container-fluid text-center d-flex justify-content-center pb-2">
                 <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,67 +71,22 @@
             <div class="masthead-content">
                 <div class="container-fluid px-4 px-lg-0">
                     <img src="{{ asset('attached/image/logo.png') }}" alt="" width="300px">
-                    <h1 class="fst-italic lh-1 mb-4">Traemos un concepto nuevo a Penonom&eacute;</h1>
-                    <p class="mb-5">Ofrecemos un lugar comodo y agradable para reunirse con amigos y familia.</p>
+                    <h1 class="fst-italic lh-1 mb-4">Jade Caf&eacute;</h1>
+                    <p class="fs-6">Estamos en Boulevard Penonomé, Feria Local 50</p>
+                    <h4>Jade Café Coffee Shop </h4>
+                    <p class="fs-6">Descubre el encanto del caf&eacute; en Penonom&eacute; con nuestra cafeter&iacute;a &uacute;nica. Sum&eacute;rgete en aromas irresistibles y sabores excepcionales  mientras disfrutas de un ambiente acogedor. ¡Visitanos para una experiencia &uacute;nica de caf&eacute; en el coraz&oacute;n de Penonom&eacute;!</p>
                 </div>
             </div>
         </div>
         <div class="content">
-            {{-- <div class="col m12 l5 height_100 valign-wrapper hide-on-med-and-down">
-                <form method="POST" action="/login" >
-                    {{-- @csrf --}}
-            {{--        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <div id="container_auth" class="row white">
-                        <div class="col s12 center-align">
-                            <p> <h4>Bienvenido</h4> </p> <p> <h5>Ingresemos</h5> </p>
-                        </div>
-                        <div class="input-field col s12">
-                            <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('Usuario') }}" required autocomplete="email" autofocus>
-                            <label for="email">{{ __('Correo Electrónico') }}</label>
-                            @error('email')
-                            <span class="invalid-feedback red-text text-darken-2" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-                        <div class="input-field col s12">
-                            <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                            <label for="password">{{ __('Contraseña') }}</label>
-                            @error('password')
-                            <span class="invalid-feedback red-text text-darken-2" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-                        <div class="col s12 center-align">
-                            <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Adelante
-                                <i class="material-icons right">send</i>
-                            </button>
-                        </div>
-                        <div class="col s12 center-align">
-                            @if (Route::has('password.request'))
-                                <p>
-                                    <a class="" href="{{ route('password.request') }}">
-                                        {{ __('¿Olvidaste tu Contraseña?') }}
-                                    </a>
-                                </p>
-                            @endif
-                        </div>
-                        <div class="col s12 center-align pb_20">
-                            <a class="btn waves-effect waves-light blue darken-3 modal-trigger" data-target="modal_register">{{ __('Registrarse') }}</a>
-                        </div>
-                    </div>
-                </form>
-            </div> --}}
-
         </div>
         <!-- Social Icons-->
         <!-- For more icon options, visit https://fontawesome.com/icons?d=gallery&p=2&s=brands-->
         <div class="social-icons">
             <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
-                <a class="btn btn-dark m-3" href="#!"><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-dark m-3" href="#!"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-dark m-3" href="#!"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-dark m-3" target="_blank" href="https://www.tiktok.com/@jade.coffe.shop"><i class="fab fa-tiktok"></i></a>
+                <a class="btn btn-dark m-3" target="_blank" href="https://www.facebook.com/jadecoffeeshop"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-dark m-3" target="_blank" href="https://www.instagram.com/jadecafe_coffeeshop/"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
         <!-- Bootstrap core JS-->

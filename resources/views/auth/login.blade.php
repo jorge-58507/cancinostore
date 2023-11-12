@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('title','Ingresar')
+@section('meta_keywords','ingresar a cuenta, log in')
+@section('meta_description','Login page of jadecoffeeshop.com')
 
 @section('content')
 <div class="container pt-5">

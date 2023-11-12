@@ -359,6 +359,12 @@ class class_table {
                 <span class="form-control cursor_default">${cls_table.raw_type[table['tx_table_type']]}</span>
               </div>
             </div>
+            <div class="col-12 py-2">
+              <div class="col-xs-12">
+                <label class="form-check-label" for="">URL</label>
+                <span class="form-control cursor_default">https://www.jadecoffeeshop.com/${table_id}</span>
+              </div>
+            </div>
             <div class="col-xs-12 py-2">
               <div class="row">
                 <div class="col-md-12 col-lg-3 mb-3 text-center">

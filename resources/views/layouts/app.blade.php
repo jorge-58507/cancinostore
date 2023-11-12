@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="keywords" content="@yield('meta_keywords','café, cafeter&iacute;a')">
+        <meta name="description" content="@yield('meta_description','Pagina para comprar cafe')">
+        <link rel="canonical" href="{{url()->current()}}"/>
 
         <title>@yield('title') Jade Caf&eacute;</title>
 
@@ -89,7 +92,7 @@
                         <div class="container py-2 px-4 px-md-3 text-body-secondary">
                             <div class="row">
                                 <div class="col-9 col-lg-9 mb-3">
-                                    <h5>Menu</h5>
+                                    <h5>Jade Caf&eacute; Coffee Shop</h5>
                                     <ul class="list-unstyled">
                                         @if (Route::has('login'))
                                             @auth

@@ -79,9 +79,10 @@
   background-position: right;
   background-attachment: scroll;
   background-size: cover;
-  box-shadow: 1px -200px 33px -78px rgba(56, 48, 48, 0.81) inset;
-  -webkit-box-shadow: 1px -200px 33px -78px rgba(5, 36, 36, 0.90) inset;
-  -moz-box-shadow: 1px -200px 33px -78px rgba(56, 48, 48, 0.81) inset;
+  background-position: bottom;
+  box-shadow: 1px -200px 53px -128px rgba(56, 48, 48, 0.81) inset;
+  -webkit-box-shadow: 1px -200px 53px -128px rgba(5, 36, 36, 0.90) inset;
+  -moz-box-shadow: 1px -200px 53px -128px rgba(56, 48, 48, 0.81) inset;
 }
 hr{
   border: solid 1px #198754;

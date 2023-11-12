@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('title','Pedidos')
+@section('meta_keywords','crear pedido, create an order, order, caf&eacute;, coffee shop, gourmet coffee, barista, freshly ground coffee')
+@section('meta_description','Request page of jadecoffeeshop.com, to make a order')
 @section('css')
+
 @endsection
 @section('content')
 
@@ -42,9 +45,9 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-12 px-2 text-center text-white d-flex align-items-start justify-content-center flex-column slide">
-      <h3 class="fw-bold">Pedidos</h3>
+    <div class="col-sm-12 px-2 text-center text-white d-flex align-items-start flex-column-reverse slide">
       <p><span>Horario de atenci&oacute;n 7:00am a 10:00pm</span></p>
+      <h3 class="fw-bold">Pedidos</h3>
     </div>
   </div>
   @if (count($data['lastest']) > 0)

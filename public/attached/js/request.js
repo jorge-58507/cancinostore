@@ -126,7 +126,7 @@ class class_command {
         content += `<hr><h5 class="fw-bold pb-3 hr_category">${article.tx_category_value}</h5>`
       }
       content += `
-        <div class="col-6 col-lg-4" onclick="cls_command.show_article('${article.tx_article_slug}','${article.tx_article_value}')">
+        <div class="col-12 col-md-6 col-lg-4" onclick="cls_command.show_article('${article.tx_article_slug}','${article.tx_article_value}')">
           <div class="card mb-3 cursor_pointer ${bg} ">
             <div class="row g-0 h_100">
               <div class="col-9 col-sm-10 col-md-8">
@@ -192,7 +192,6 @@ class class_command {
           }
           content_option += `</select></div>`;
         }
-        // content_option += `</div>`;
       }
       var option_presentation = ``; //OPTION PARA LAS PRESENTACIONES DEL ARTICULO, AL CAMBIAR CAMBIAR LOS PRECIOS
       obj.data.price.map((price) => {
@@ -201,50 +200,26 @@ class class_command {
 
       var tax_rate = obj.data.article.tx_article_taxrate;
 
-      // var content = `
-      //   <div class="row">
-      //     <div class="col-md-12 col-lg-4">
-      //       <label for="articlePresentation">Presentation</label>
-      //       <select class="form-select" id="articlePresentation" onchange="cls_command.modal_set_price(this.options[this.selectedIndex].getAttribute('alt'), this.value, '${article_slug}')">
-      //         ${option_presentation}
-      //       </select>
-      //     </div>
-      //     <div class="col-6 col-lg-4">
-      //       <label for="articleQuantity">Cantidad</label>
-      //       <input type="number" class="form-control" id="articleQuantity" value="1" onfocus="cls_general.validFranz(this.id, ['number'])" >
-      //     </div>
-      //     <div id="container_price" class="col-6 col-lg-4">
-      //     </div>
-      //     <div class="col-sm-12">
-      //       <div id="container_recipe" class="row">
-      //       </div>
-      //     </div>
-      //     <div class="col-md-12 col-lg-4">
-      //       <input type="hidden" class="form-control" id="articleDiscountrate" value="${obj.data.article.tx_article_discountrate}" onfocus="cls_general.validFranz(this.id, ['number'])" required>
-      //       <input type="hidden" class="form-control" id="articleTaxrate" value="${tax_rate}" onfocus="cls_general.validFranz(this.id, ['number'])" required>
-      //     </div>
-      //     ${content_option}
-      //   </div>
-      // `;
       var content = `
         <form id="create_command" action="">
+          <span id="span_info" class="fs-3">${obj.data.article.tx_article_value}</span>&nbsp;&nbsp;<span id="span_price" class="fs-4 fw-bold">B/ 50.00</span>
+          <hr>
           <div class="tab_step h_150 display_none">
             <div class="row">
-              <div class="col-md-12 col-lg-4">
+              <div class="col-12 col-lg-6">
                 <label for="articlePresentation">Presentation</label>
                 <select class="form-select" id="articlePresentation" onchange="cls_command.modal_set_price(this.options[this.selectedIndex].getAttribute('alt'), this.value, '${article_slug}')">
                   ${option_presentation}
                 </select>
               </div>
-              <div class="col-6 col-lg-4">
+              <div class="col-12 col-lg-6">
                 <label for="articleQuantity">Cantidad</label>
                 <input type="number" class="form-control" id="articleQuantity" value="1" onfocus="cls_general.validFranz(this.id, ['number'])" >
-              </div>
-              <div id="container_price" class="col-6 col-lg-4">
               </div>
               <div class="col-md-12 col-lg-4">
                 <input type="hidden" class="form-control" id="articleDiscountrate" value="${obj.data.article.tx_article_discountrate}" onfocus="cls_general.validFranz(this.id, ['number'])" required>
                 <input type="hidden" class="form-control" id="articleTaxrate" value="${tax_rate}" onfocus="cls_general.validFranz(this.id, ['number'])" required>
+                <input type="hidden" class="form-control" id="articlePrice" required>
               </div>
             </div>
           </div>
@@ -393,15 +368,18 @@ class class_command {
       if (obj.status === 'success') {
 
         var raw = str.split(',');
-        var content = `<label for="articlePrice">Precio</label>
-        <select class="form-select" id="articlePrice">`;
-        raw.map((price) => {
-          var p = parseFloat(price);
-          if (price > 0.1) {
-            content += `<option value="${p}">${p.toFixed(2)}</option>`;
-          }
-        })
-        document.getElementById('container_price').innerHTML = content + '</select>';
+        document.getElementById('span_price').innerHTML = 'B/ '+cls_general.val_price(raw[0]);
+        document.getElementById('articlePrice').value = parseFloat(raw[0]);
+
+        // var content = `<label for="articlePrice">Precio</label>
+        // <select class="form-select" id="articlePrice">`;
+        // raw.map((price) => {
+        //   var p = parseFloat(price);
+        //   if (price > 0.1) {
+        //     content += `<option value="${p}">${p.toFixed(2)}</option>`;
+        //   }
+        // })
+        // document.getElementById('container_price').innerHTML = content + '</select>';
         document.getElementById('container_recipe').innerHTML = cls_command.generate_recipe_option(obj.data.recipe);;
 
       } else {
