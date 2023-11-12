@@ -18,11 +18,11 @@
                               Le hemos enviado a su correo un enlace para cambiar la contrase&ntilde;a.
                             </div>
                         @endif
-                        <div class="form-group row">
+                        <div class="form-group row pb-2">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo Electrónico') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus value="{{ $request->email }}">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -31,7 +31,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row pb-2">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 
                             <div class="col-md-6">
@@ -44,7 +44,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row pb-2">
                             <label for="password_confirmation" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar Contraseña') }}</label>
 
                             <div class="col-md-6">
@@ -57,7 +57,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <input id="token" type="text" class="form-control" name="token" value="{{ $request->token }}">
+                        <input id="token" type="hidden" class="form-control" name="token" value="{{ $request->token }}">
                         <div class="form-group row mb-0 pt-3">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
