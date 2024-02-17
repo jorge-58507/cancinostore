@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Jade Caf&eacute;</title>
-        <link rel="icon" type="image/x-icon" href="{{ asset('attached/image/favicon.ico') }}" />
+        <title>Tequila & Mezcal</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('attached/image/favicon_tm.ico') }}" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -17,84 +17,119 @@
         <link href="{{ asset('attached/css/sc.css') }}" rel="stylesheet" />
         <link href="{{ asset('attached/css/mp.css') }}" rel="stylesheet" />
     </head>
-    <body style="background-image: url('attached/image/jade_bg.jpg')">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary" style="z-index: 100">
-            <div class="container-fluid text-center d-flex justify-content-center pb-2">
-                <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>&nbsp;Menu
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        @if (Route::has('login'))
-                            @auth
-                                <a class="nav-link active btn btn-outline-light" href="{{ url('/request') }}">Pedidos</a>
-                            @else
-                                <a class="nav-link text-white" href="{{ url('/login') }}">Ingresar</a>
-                                @if (Route::has('register'))
-                                    <a class="nav-link text-white" href="{{ route('register') }}">Registrarse</a>
-                                @endif
-                            @endauth
-                        @endif
+
+
+    
+<body>
+
+        <!-- Preloader-->
+        <div class="page-loader" style="display: none;">
+            <div class="page-loader-inner">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Preloader end-->
+
+        <!-- Header-->
+        <header class="header">
+            <div class="container-fluid">
+                <!-- Brand-->
+                <div class="inner-header"><a class="inner-brand" href="{{ asset('/') }}"><img src="/attached/image/logo_tm.png" height="100px"></a></div>
+            </div>
+        </header>
+        <!-- Header end-->
+
+        <!-- Wrapper-->
+        <div class="wrapper">
+            <!-- Hero-->
+            <section class="top-section">
+            </section>
+            <!-- Hero end-->
+
+            <!-- About-->
+            <section class="middle-section">
+                <div class="module">
+                    <div class="row">
+                        <div class="col-md-6 m-auto text-center">
+                            <h1 class="companyname text-white">Tequila y Mezcal</h1>
+                            <p class="lead pt-3">Si caes, que sea en la tentaci&oacute;n de unos ricos tacos.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="space text-center" data-my="60px" style="margin-top: 60px;">
+                                <a href="/request/new" class="btn btn-lg btn-success">Ordenar en Linea</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="d-none d-md-block px-1">
-                    <form method="POST" action="/login" class="d-flex h_50">
-                            {{-- @csrf --}}
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        
-                        <label for="email" class="text-white">{{ __('Correo Electrónico') }}</label>&nbsp;
-                        <input id="email" type="email" class="form-control me-2 @error('email') is-invalid @enderror" name="email" value="{{ old('Usuario') }}" required autocomplete="email" autofocus>
-                        @error('email')
-                            <span class="invalid-feedback text-red text-darken-2" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                        <label for="password" class="text-white">{{ __('Contraseña') }}</label>&nbsp;
-                        <input id="password" type="password" class="form-control me-2 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                        @error('password')
-                            <span class="invalid-feedback red-text text-darken-2" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-        
-                        <button class="btn btn-outline-light" type="submit" name="action">Entrar</button>
-                        <a class="btn btn-link text-white" href="{{ route('password.request') }}">
-                            {{ __('¿Contraseña Olvidada?') }}
-                        </a>
-                    </form>
+            </section>
+            <!-- About end-->
+
+            <!-- Footer-->
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <!-- Text widget-->
+                            <aside class="widget widget-text">
+                                <div class="widget-title">
+                                    <h6>Nosotros</h6>
+                                </div>
+                                <div class="textwidget">
+                                    <p>Somos un retaurante de comida mexicana, nos esforzamos en ofrecer un excelente servicio a nuestra clientela.</p>
+                                    <ul class="social-icons">
+                                        <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="14px"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path style="fill:#fff;" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></li>
+                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    </ul>
+                                </div>
+                            </aside>
+                        </div>
+                        <div class="col-md-3">
+                            <!-- Twitter widget-->
+                            <aside class="widget twitter-feed-widget">
+                                <div class="widget-title">
+                                    <h6>Contacto</h6>
+                                </div>
+                                <div class="textwidget">
+                                    <p>
+                                        Ubicaci&oacute;n: Boulevard Penonom&eacute;, Feria local #46<br>
+                                        E-mail: tequilaymezcalcansino@gmail.com<br>
+                                        Phone: 6611-8028<br>
+                                    </p>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </nav>
+                <div class="footer-bar text-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>© 2024 - {{ date('Y') }} Tequila & Mezcal, All Rights Reserved. Design por Jorge Salda&ntilde;a</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- Footer end-->
+        </div>
+        <!-- Wrapper end-->
 
 
-        <!-- Masthead-->
-        <div class="masthead">
-            <div class="masthead-content">
-                <div class="container-fluid px-4 px-lg-0">
-                    <img src="{{ asset('attached/image/logo.png') }}" alt="" width="300px">
-                    <h1 class="fst-italic lh-1 mb-4">Jade Caf&eacute;</h1>
-                    <p class="fs-6">Estamos en Boulevard Penonomé, Feria Local 50</p>
-                    <h4>Jade Café Coffee Shop </h4>
-                    <p class="fs-6">Descubre el encanto del caf&eacute; en Penonom&eacute; con nuestra cafeter&iacute;a &uacute;nica. Sum&eacute;rgete en aromas irresistibles y sabores excepcionales  mientras disfrutas de un ambiente acogedor. ¡Visitanos para una experiencia &uacute;nica de caf&eacute; en el coraz&oacute;n de Penonom&eacute;!</p>
-                </div>
-            </div>
-        </div>
-        <div class="content">
-        </div>
-        <!-- Social Icons-->
-        <!-- For more icon options, visit https://fontawesome.com/icons?d=gallery&p=2&s=brands-->
-        <div class="social-icons">
-            <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
-                <a class="btn btn-dark m-3" target="_blank" href="https://www.tiktok.com/@jade.coffe.shop"><i class="fab fa-tiktok"></i></a>
-                <a class="btn btn-dark m-3" target="_blank" href="https://www.facebook.com/jadecoffeeshop"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-dark m-3" target="_blank" href="https://www.instagram.com/jadecafe_coffeeshop/"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <!-- Scripts-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0rANX07hh6ASNKdBr4mZH0KZSqbHYc3Q"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    
     </body>
 </html>
 

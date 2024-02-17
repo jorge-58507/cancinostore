@@ -1,3 +1,9 @@
+/* tequila colors
+  red: #cd1127
+  light yellow: #ff9a00
+  dark yellow: #dd6b00
+*/
+
 .article_image {
   width: 60px;
   height: 60px;
@@ -26,6 +32,24 @@
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #006b69;
   --bs-btn-disabled-border-color: #006b69;
+}
+.cstequila_bg {
+  background-color: #006747;
+
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #006747;
+  --bs-btn-border-color: #006747;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #01514f;
+  --bs-btn-hover-border-color: #01514f;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #01514f;
+  --bs-btn-active-border-color: #01514f;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #006747;
+  --bs-btn-disabled-border-color: #006747;
 }
 .tmred_text {
   color: #CE1125;
@@ -73,25 +97,25 @@
   --bs-btn-disabled-border-color: #02876A;
 }
 .slide {
-  background-image: url('/attached/image/bg_slide.png');
+  background-image: url('/attached/image/bg_slide_tequila.png');
   height: 250px;
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: left;
   background-attachment: scroll;
   background-size: cover;
-  background-position: bottom;
-  box-shadow: 1px -200px 53px -128px rgba(56, 48, 48, 0.81) inset;
-  -webkit-box-shadow: 1px -200px 53px -128px rgba(5, 36, 36, 0.90) inset;
-  -moz-box-shadow: 1px -200px 53px -128px rgba(56, 48, 48, 0.81) inset;
+  box-shadow: 1px -140px 53px -128px rgba(56, 48, 48, 0.81) inset;
+  -webkit-box-shadow: 1px -140px 53px -128px rgba(5, 36, 36, 0.90) inset;
+  -moz-box-shadow: 1px -140px 53px -128px rgba(56, 48, 48, 0.81) inset;
 }
 hr{
   border: solid 1px #198754;
 }
 .hr_category{
   height: 60px;
-  background-image: url("/attached/image/hr_category.png");
+  background-image: url("/attached/image/hr_tequila.png");
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
   padding-top: 15px;
 }
+

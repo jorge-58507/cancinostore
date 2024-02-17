@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title','Crear Cuenta')
 @section('meta_keywords','crear cuenta, create account, register')
-@section('meta_description','Register page of jadecoffeeshop.com')
+@section('meta_description','Register page of tequilaymezcal.com')
 
 @section('content')
 <div class="container pt-4">
@@ -9,13 +9,13 @@
         
         <div class="col-12 mb-5 text-center d-flex justify-content-center">
             <div class="col-8">
-                <span>Para hacer algun pedido debe primero crear su contrase&ntilde;a, una vez dentro podr&aacute; elegir entre la gran variedad postres y caf&eacute;s que tenemos para usted, desde un espresso hasta exquisitas mezclas locales que cautivar&aacute; a los amantes del caf&eacute;.</span>
+                <span>Para hacer algun pedido debe primero crear su contrase&ntilde;a, una vez dentro podr&aacute; elegir entre la gran variedad platos y bebidas que tenemos para usted, ¿Se le antojan unos tacos o unos burritos? pues acerquese que cautivaremos su paladar.</span>
             </div>
             <hr>
         </div>
         <div class="col-md-6 mb-3">
             <div class="card">
-                <div class="card-header csjade_bg text-white">{{ __('Ingresar') }}</div>
+                <div class="card-header cstequila_bg text-white">{{ __('Ingresar') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -69,7 +69,7 @@
 
         <div class="col-md-6 mb-3">
             <div class="card">
-                <div class="card-header csjade_bg text-white">{{ __('Crear Cuenta') }}</div>
+                <div class="card-header cstequila_bg text-white">{{ __('Crear Cuenta') }}</div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf

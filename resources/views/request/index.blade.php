@@ -45,8 +45,8 @@
   </div>
 
   <div class="row">
-    <div class="col-sm-12 px-2 text-center text-white d-flex align-items-start flex-column-reverse slide">
-      <p><span>Horario de atenci&oacute;n 7:00am a 10:00pm</span></p>
+    <div class="col-sm-12 px-2 text-center text-white d-flex align-items-end flex-column-reverse slide">
+      <p><span>Horario de atenci&oacute;n 11:00am a 11:00pm</span></p>
       <h3 class="fw-bold">Pedidos</h3>
     </div>
   </div>

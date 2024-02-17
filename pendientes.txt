@@ -1,5 +1,6 @@
 Al pasar a produccion verificar el seeder de la tabla optiones
 el servicio de register si no esta confirmado el correo no permitir el acceso a request
+al hacer pedido verificar los pedidos anulados, mas de 5 bloquear cuenta y la ip
 
 PASS DO
 cancino123Ernesto <- DROPLETPASSWORD USED IN SSH branch updating-laravel
